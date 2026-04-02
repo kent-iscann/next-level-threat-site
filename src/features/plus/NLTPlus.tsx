@@ -1,18 +1,31 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './NLTPlus.css';
 
-const benefits = [
-  { icon: '🔍', title: 'AI-Enhanced Analysis', desc: 'Machine learning models trained on decades of geopolitical data to surface hidden patterns.' },
-  { icon: '📜', title: 'Historical Context', desc: 'Deep-dive historical excavation that maps past precedents to modern crises.' },
-  { icon: '🌐', title: 'OSINT Experts', desc: 'Rigorous OSINT methodologies applied to publicly available documents and signals.' },
-  { icon: '🚀', title: 'Actionable Foresight', desc: 'Clear, pragmatic intelligence designed to inform strategy and mitigate risk.' },
+const benefitItems = [
+  { title: 'AI-Enhanced Analysis', desc: 'Machine learning models trained on decades of geopolitical data to surface hidden patterns.' },
+  { title: 'Historical Context', desc: 'Deep-dive historical excavation that maps past precedents to modern crises.' },
+  { title: 'OSINT Experts', desc: 'Rigorous OSINT methodologies applied to publicly available documents and signals.' },
+  { title: 'Actionable Foresight', desc: 'Clear, pragmatic intelligence designed to inform strategy and mitigate risk.' },
 ];
 
-const offer = [
-  { icon: '🔍', title: 'Nexus', desc: 'Get access all Nexus episodes on demand, ad free.' },
-  { icon: '📜', title: 'Signal & Fracture', desc: 'Prepare for the future with our proprietary foresight framework.' },
-  { icon: '🌐', title: 'OSINT Briefing', desc: 'Monthly intelligence briefing from our team of OSINT experts.' },
-  { icon: '🚀', title: 'Expert Knowledge', desc: 'Exclusive access to expert analysis of current events.' },
+const offerItems = [
+  { title: 'Nexus', desc: 'Get access all Nexus episodes on demand, ad free.' },
+  { title: 'Signal & Fracture', desc: 'Prepare for the future with our proprietary foresight framework.' },
+  { title: 'OSINT Briefing', desc: 'Monthly intelligence briefing from our team of OSINT experts.' },
+  { title: 'Expert Knowledge', desc: 'Exclusive access to expert analysis of current events.' },
+];
+
+const features = [
+  'Full access to Nexus episodes, ad free',
+  'Signal & Fracture intelligence briefs (audio and text)',
+  'Trend forecasting',
+  'Archive access & deep dives',
+  'Exclusive OSINT briefings',
+];
+
+const plans = [
+  { key: 'monthly' as const, name: 'Monthly', price: '$29', period: '/mo', tag: 'Monthly', cta: 'Subscribe Now', highlight: false, savings: '' },
+  { key: 'annual' as const, name: 'Annual', price: '$199', period: '/yr', tag: 'Annual', cta: 'Subscribe Now (Save 20%)', highlight: true, savings: 'Save 20%' },
 ];
 
 export default function NLTPlus() {
@@ -48,9 +61,8 @@ export default function NLTPlus() {
         <div className="plus__benefits sub-section">
           <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>Why Threat+?</h3>
           <div className="benefits__grid">
-            {benefits.map(b => (
+            {benefitItems.map(b => (
               <div key={b.title} className="card benefit-card">
-                <div className="benefit-card__icon">{b.icon}</div>
                 <h4 className="benefit-card__title">{b.title}</h4>
                 <p className="benefit-card__desc">{b.desc}</p>
               </div>
@@ -61,9 +73,8 @@ export default function NLTPlus() {
         <div className="plus__benefits sub-section">
           <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>What You Get</h3>
           <div className="benefits__grid">
-            {offer.map(b => (
+            {offerItems.map(b => (
               <div key={b.title} className="card benefit-card">
-                <div className="benefit-card__icon">{b.icon}</div>
                 <h4 className="benefit-card__title">{b.title}</h4>
                 <p className="benefit-card__desc">{b.desc}</p>
               </div>
@@ -79,26 +90,25 @@ export default function NLTPlus() {
           </div>
 
           <div className="pricing__cards">
-            <div className="pricing__card card">
-              <div className="pricing__tag">Monthly</div>
-              <div className="pricing__amount">$29<span className="pricing__period">/mo</span></div>
-              <button className="btn btn-primary pricing__cta">Subscribe Now</button>
-            </div>
-            <div className="pricing__card card pricing__card--highlight">
-              <div className="pricing__tag">Annual <span className="tab__badge">Save 20%</span></div>
-              <div className="pricing__amount">$199<span className="pricing__period">/yr</span></div>
-              <button className="btn btn-primary pricing__cta">Subscribe Now (Save 20%)</button>
-            </div>
+            {plans.map(p => (
+              <div key={p.key} className={`pricing__card card${plan === p.key ? ' pricing__card--active' : ''}${p.highlight ? ' pricing__card--highlight' : ''}`}>
+                <div className="pricing__tag">
+                  {p.tag}
+                  {p.savings && <span className="tab__badge">{p.savings}</span>}
+                </div>
+                <div className="pricing__amount">{p.price}<span className="pricing__period">{p.period}</span></div>
+                <ul className="pricing__features">
+                  {features.map(f => <li key={f}>{f}</li>)}
+                </ul>
+                <button className="btn btn-primary pricing__cta">{p.cta}</button>
+              </div>
+            ))}
           </div>
 
           <div className="pricing__mobile-card card">
             <div className="pricing__amount">{plan === 'monthly' ? '$29' : '$199'}<span className="pricing__period">/{plan === 'monthly' ? 'mo' : 'yr'}</span></div>
             <ul className="pricing__features">
-              <li>Full access to Nexus episodes, ad free</li>
-              <li>Signal & Fracture intelligence briefs (audio and text)</li>
-              <li>Trend forecasting</li>
-              <li>Archive access & deep dives</li>
-              <li>Exclusive OSINT briefings</li>
+              {features.map(f => <li key={f}>{f}</li>)}
             </ul>
             <button className="btn btn-primary pricing__cta">Subscribe Now</button>
           </div>

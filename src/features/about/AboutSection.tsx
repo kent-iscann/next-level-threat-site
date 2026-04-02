@@ -1,4 +1,3 @@
-import React from 'react';
 import './AboutSection.css';
 
 export default function AboutSection() {
@@ -14,7 +13,7 @@ export default function AboutSection() {
             At Next Level Threat, we bridge the gap between scattered open-source intelligence and strategic foresight, empowering individuals and organizations to navigate an increasingly volatile world with clarity and confidence.
           </p>
           <div className="about__footer">
-            <p className="about__group">A flagship intelligence solution by <a href="#" className="about__link">IScann Group</a></p>
+            <p className="about__group">A flagship intelligence solution by <span className="about__brand">IScann Group</span></p>
           </div>
         </div>
       </div>

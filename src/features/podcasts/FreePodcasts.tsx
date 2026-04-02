@@ -1,4 +1,3 @@
-import React from 'react';
 import './FreePodcasts.css';
 
 export default function FreePodcasts() {

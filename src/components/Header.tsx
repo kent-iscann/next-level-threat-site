@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Header.css';
 
 export default function Header() {
@@ -24,7 +24,7 @@ export default function Header() {
             <img src="images/nlt_logo.png" alt="Next Level Threat Logo" />
           </div>
 
-        <button className="header__toggle" aria-label="Toggle menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button className="header__toggle" aria-label="Toggle menu" aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span className={`bar ${isMenuOpen ? 'open' : ''}`}></span>
           <span className={`bar ${isMenuOpen ? 'open' : ''}`}></span>
           <span className={`bar ${isMenuOpen ? 'open' : ''}`}></span>
