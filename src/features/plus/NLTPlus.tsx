@@ -4,15 +4,15 @@ import './NLTPlus.css';
 const benefits = [
   { icon: '🔍', title: 'AI-Enhanced Analysis', desc: 'Machine learning models trained on decades of geopolitical data to surface hidden patterns.' },
   { icon: '📜', title: 'Historical Context', desc: 'Deep-dive historical excavation that maps past precedents to modern crises.' },
-  { icon: '🌐', title: 'OSINT Foundation', desc: 'Rigorous OSINT methodologies applied to publicly available documents and signals.' },
+  { icon: '🌐', title: 'OSINT Experts', desc: 'Rigorous OSINT methodologies applied to publicly available documents and signals.' },
   { icon: '🚀', title: 'Actionable Foresight', desc: 'Clear, pragmatic intelligence designed to inform strategy and mitigate risk.' },
 ];
 
 const offer = [
-  { icon: '🔍', title: 'Nexus', desc: 'Machine learning models trained on decades of geopolitical data to surface hidden patterns.' },
-  { icon: '📜', title: 'Signal & Fracture', desc: 'Deep-dive historical excavation that maps past precedents to modern crises.' },
-  { icon: '🌐', title: 'OSINT Foundation', desc: 'Rigorous OSINT methodologies applied to publicly available documents and signals.' },
-  { icon: '🚀', title: 'Actionable Foresight', desc: 'Clear, pragmatic intelligence designed to inform strategy and mitigate risk.' },
+  { icon: '🔍', title: 'Nexus', desc: 'Get access all Nexus episodes on demand, ad free.' },
+  { icon: '📜', title: 'Signal & Fracture', desc: 'Prepare for the future with our proprietary foresight framework.' },
+  { icon: '🌐', title: 'OSINT Briefing', desc: 'Monthly intelligence briefing from our team of OSINT experts.' },
+  { icon: '🚀', title: 'Expert Knowledge', desc: 'Exclusive access to expert analysis of current events.' },
 ];
 
 export default function NLTPlus() {
@@ -82,25 +82,11 @@ export default function NLTPlus() {
             <div className="pricing__card card">
               <div className="pricing__tag">Monthly</div>
               <div className="pricing__amount">$29<span className="pricing__period">/mo</span></div>
-              <ul className="pricing__features">
-                <li>Full access to Nexus episodes, ad free</li>
-                <li>Signal & Fracture intelligence briefs (audio and text)</li>
-                <li>Trend forecasting</li>
-                <li>Archive access & deep dives</li>
-                <li>Exclusive OSINT briefings</li>
-              </ul>
               <button className="btn btn-primary pricing__cta">Subscribe Now</button>
             </div>
             <div className="pricing__card card pricing__card--highlight">
               <div className="pricing__tag">Annual <span className="tab__badge">Save 20%</span></div>
               <div className="pricing__amount">$199<span className="pricing__period">/yr</span></div>
-              <ul className="pricing__features">
-                <li>Full access to Nexus episodes, ad free</li>
-                <li>Signal & Fracture intelligence briefs (audio and text)</li>
-                <li>Trend forecasting</li>
-                <li>Archive access & deep dives</li>
-                <li>Exclusive OSINT briefings</li>
-              </ul>
               <button className="btn btn-primary pricing__cta">Subscribe Now (Save 20%)</button>
             </div>
           </div>
