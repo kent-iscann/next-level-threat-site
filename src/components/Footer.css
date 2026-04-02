@@ -1,5 +1,5 @@
 .footer {
-  background: var(--bg-primary);
+  background: #1a1a1a;
   border-top: 1px solid var(--border);
   padding: 4rem 0 2rem;
 }
