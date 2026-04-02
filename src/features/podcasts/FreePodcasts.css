@@ -1,0 +1,7 @@
+.podcasts { background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.podcasts__header { text-align: center; margin-bottom: 2rem; }
+.podcasts__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.podcast-card { background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 2rem; }
+.podcast-card__title { font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 0.75rem; }
+.podcast-card__desc { color: var(--text-secondary); margin-bottom: 1.5rem; }
+.podcast-card__embed { border-radius: var(--radius-sm); overflow: hidden; }
