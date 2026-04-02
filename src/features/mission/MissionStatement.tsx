@@ -1,4 +1,3 @@
-import React from 'react';
 import './MissionStatement.css';
 
 export default function MissionStatement() {
