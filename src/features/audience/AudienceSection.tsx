@@ -24,7 +24,7 @@ export default function AudienceSection() {
     <section id="audience" className="audience section">
       <div className="container">
         <div className="audience__header">
-          <h2 className="section-title">Who This Is For</h2>
+          <h2 className="section-title">Designed for Professionals</h2>
           <p className="section-subtitle">
             Built for people whose work depends on understanding global shifts before they become headlines.
           </p>
