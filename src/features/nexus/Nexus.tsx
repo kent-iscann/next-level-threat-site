@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './NLTPlus.css';
+import './Nexus.css';
 
 const benefitItems = [
   {
-    title: 'Proprietary Framework',
+    title: 'OSINT Foundation',
     desc: 'Machine learning models trained on decades of geopolitical data to surface hidden patterns.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
@@ -48,83 +48,35 @@ const benefitItems = [
   },
 ];
 
-// const offerItems = [
-//   {
-//     title: 'Risk Assessments',
-//     desc: 'Get access all Nexus episodes on demand, ad free.',
-//     icon: (
-//       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
-//         <rect x="2" y="3" width="20" height="14" rx="2" />
-//         <polygon points="10 7 10 13 15 10 10 7" />
-//         <line x1="6" y1="21" x2="18" y2="21" />
-//         <line x1="12" y1="17" x2="12" y2="21" />
-//       </svg>
-//     ),
-//   },
-//   {
-//     title: 'Scenario Planning',
-//     desc: 'Prepare for the future with our proprietary foresight framework.',
-//     icon: (
-//       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
-//         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-//       </svg>
-//     ),
-//   },
-//   {
-//     title: 'Weekly Briefing',
-//     desc: 'Monthly intelligence briefing from our team of OSINT experts.',
-//     icon: (
-//       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
-//         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-//         <polyline points="14 2 14 8 20 8" />
-//         <line x1="16" y1="13" x2="8" y2="13" />
-//         <line x1="16" y1="17" x2="8" y2="17" />
-//         <line x1="10" y1="9" x2="8" y2="9" />
-//       </svg>
-//     ),
-//   },
-//   {
-//     title: 'Quarterly Updates',
-//     desc: 'Exclusive access to expert analysis of current events.',
-//     icon: (
-//       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
-//         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-//         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-//       </svg>
-//     ),
-//   },
-// ];
-
-
-// const plans = [
-//   { key: 'monthly' as const, name: 'Monthly', price: '$29', period: '/mo', tag: 'Monthly', cta: 'Subscribe Now', highlight: false, savings: '' },
-//   { key: 'annual' as const, name: 'Annual', price: '$199', period: '/yr', tag: 'Annual', cta: 'Subscribe Now (Save 20%)', highlight: true, savings: 'Save 20%' },
-// ];
+const plans = [
+  { key: 'monthly' as const, name: 'Monthly', price: '$29', period: '/mo', tag: 'Monthly', cta: 'Subscribe Now', highlight: false, savings: '' },
+  { key: 'annual' as const, name: 'Annual', price: '$199', period: '/yr', tag: 'Annual', cta: 'Subscribe Now (Save 20%)', highlight: true, savings: 'Save 20%' },
+];
 
 export default function NLTPlus() {
-  // const [plan, setPlan] = useState<'monthly' | 'annual'>('annual');
+  const [plan, setPlan] = useState<'monthly' | 'annual'>('annual');
 
   return (
-    <section id="plus" className="plus section">
+    <section id="nexus" className="nexus section">
       <div className="container">
-        <div className="plus__header">
-          <h2 className="section-title">Signal & Fracture</h2>
-          <p className="section-subtitle">Identifying tomorrow's threats.</p>
+        <div className="nexus__header">
+          <h2 className="section-title">Nexus</h2>
+          <p className="section-subtitle">Explaining today's geopolitical realities through historical excavation.</p>
         </div>
 
-        <div className="plus__teasers">
+        <div className="nexus__teasers">
           <div className="card tease-card">
-            <div className="tease-card__badge">Intelligence Brief</div>
-            <h3 className="tease-card__title">Risk Assessment</h3>
-            <p className="tease-card__desc">Our proprietary risk analysis of geopolitical flashpoints.</p>
+            <div className="tease-card__badge">Audio Series</div>
+            <h3 className="tease-card__title">Country Analysis</h3>
+            <p className="tease-card__desc">Understand the complexities of the countries at the center of geopolitics.</p>
             <div className="tease-card__player">
               <div className="placeholder-embed">Spotify Embed (Coming Soon)</div>
             </div>
           </div>
           <div className="card tease-card tease-card--signal">
             <div className="tease-card__badge">Actionable Insights</div>
-            <h3 className="tease-card__title">Scenario Planning</h3>
-            <p className="tease-card__desc">Be prepared for future geopolitical developments.</p>
+            <h3 className="tease-card__title">Future Outlook</h3>
+            <p className="tease-card__desc">Projecting the future based on historical excavation.</p>
             <div className="tease-card__player">
               <div className="placeholder-embed">PDF Report (Coming Soon)</div>
             </div>
@@ -132,7 +84,7 @@ export default function NLTPlus() {
         </div>
 
         <div className="plus__benefits sub-section">
-          <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>Tomorrow's Threats, Today.</h3>
+          <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>Today's Reality, Explained by History.</h3>
           <div className="benefits__grid">
             {benefitItems.map(b => (
               <div key={b.title} className="card benefit-card">

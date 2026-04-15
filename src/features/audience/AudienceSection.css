@@ -1,4 +1,4 @@
-.audience { background-color: var(--bg-secondary); }
+.audience { background-color: #000000; }
 .audience__header { text-align: center; margin-bottom: 1rem; }
 
 .audience__grid {
