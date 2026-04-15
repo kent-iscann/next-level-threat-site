@@ -1,6 +1,5 @@
 .taiwan-strait-page {
-  max-width: 1100px;
-  margin: 0 auto;
+  margin: 6rem auto;
   padding: 2rem 1rem 4rem;
 }
 
@@ -20,13 +19,18 @@
 }
 
 .page-header {
-  text-align: center;
   margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .threat-visual {
   display: flex;
-  justify-content: center;
   margin-bottom: 1.5rem;
 }
 
@@ -44,14 +48,15 @@
   box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
 }
 
-.page-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
 .description {
   color: #64748b;
-  font-size: 1rem;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--text-secondary);
+}
+
+.judgement {
+  background: rgb(191, 224, 255);
+  color:blue;
 }
 
 .content-section h2 {
@@ -89,6 +94,8 @@
   font-size: 0.85rem;
   color: #64748b;
 }
+
+.content__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
 .content-card h3 {
   margin: 0;

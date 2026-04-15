@@ -15,7 +15,7 @@ export default function Footer() {
             <img width="48px" src="images/nlt_logo.png" alt="Next Level Threat Logo" />
             <h3 className="footer__title">Next Level Threat</h3>
           <p className="footer__tagline">Your Chief Geopolitical Officer</p>
-          <a href="#plus" className="btn btn-primary footer__cta">View Demo</a>
+          <a href="/dashboard" className="btn btn-primary footer__cta">View Demo</a>
         </div>
         <div className="footer__bottom">
           <nav className="footer__nav">
