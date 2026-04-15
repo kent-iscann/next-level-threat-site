@@ -24,9 +24,9 @@ const verticals = [
     title: 'Nexus',
     description: 'Cross-domain connections and systemic risk mapping',
     items: [
-      { label: 'Iran', date: '', path: '#' },
-      { label: 'Venezuela', date: '', path: '#' },
-      { label: 'Taiwan', date: '', path: '#' },
+      { label: 'Islamic Republic of Iran', date: '01/04/2026', path: '#' },
+      { label: 'Venezuela', date: '28/03/2026', path: '#' },
+      { label: 'Taiwan', date: '14/03/2026', path: '#' },
     ],
   },
   {
@@ -97,7 +97,7 @@ export default function DashboardPage() {
         </section>
 
         <section className="dash-verticals-section">
-          <h2>Recent Intelligence</h2>
+          <h2>Intelligence Library</h2>
           <div className="dash-verticals-grid">
             {verticals.map(vertical => {
               const Icon = vertical.icon;

@@ -13,7 +13,7 @@ export default function HeroSection() {
           AI-enhanced geopolitical intelligence that decodes today's complexities and anticipates tomorrow's critical threats.
         </p>
         <div className="hero__actions">
-          <a href="#plus" className="btn btn-primary">View Demo</a>
+          <a href="/dashboard" className="btn btn-primary">View Demo</a>
           <a href="#podcasts" className="btn btn-secondary">Explore Free Intelligence</a>
         </div>
       </div>
