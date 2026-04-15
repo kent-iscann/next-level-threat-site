@@ -187,7 +187,7 @@ export default function TaiwanStraitPage() {
             {keyActors.map(actor => (
               <div key={actor.role} className="strait-actor-card">
                 <h3>{actor.role}</h3>
-                <p>Strategic stake: {actor.stake}</p>
+                <p><strong>Strategic stake:</strong> {actor.stake}</p>
               </div>
             ))}
           </div>
@@ -196,7 +196,7 @@ export default function TaiwanStraitPage() {
         <section className="strait-content-section">
           <div className="strait-content-section-header">
             <h2>Risk Assessment</h2>
-            <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a>
+            {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
           </div>
           <div className="strait-content-grid">
             {riskAssessment.map(item => (
@@ -208,7 +208,7 @@ export default function TaiwanStraitPage() {
         <section className="strait-content-section">
           <div className="strait-content-section-header">
             <h2>Scenario Planning</h2>
-            <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a>
+            {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
           </div>
           <div className="strait-content-grid">
             {scenarioPlanning.map(item => (

@@ -20,9 +20,9 @@ const latestActivity = [
   {
     icon: Globe,
     title: 'Islamic Republic of Iran',
-    description: 'Cross-domain intelligence mapping economic contours and diplomatic pathways in the current geopolitical landscape.',
+    description: 'Explaining modern-day Iran through historical excavation.',
     date: '01/04/2026',
-    path: '#',
+    path: '/nexus-iran',
     source: 'Nexus',
   },
 ];
@@ -43,7 +43,7 @@ const verticals = [
     title: 'Nexus',
     description: 'Cross-domain connections and systemic risk mapping',
     items: [
-      { label: 'Islamic Republic of Iran', date: '01/04/2026', path: '#' },
+      { label: 'Islamic Republic of Iran', date: '01/04/2026', path: '/nexus-iran' },
       { label: 'Venezuela', date: '28/03/2026', path: '#' },
       { label: 'Taiwan', date: '14/03/2026', path: '#' },
     ],
@@ -113,7 +113,6 @@ export default function DashboardPage() {
 
         <header className="dash-header">
           <h1>Next Level Threat Dashboard</h1>
-          <p>Access content verticals and monitor critical threat regions</p>
         </header>
 
         <section className="dash-regions-section">

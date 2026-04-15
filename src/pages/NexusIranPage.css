@@ -1,0 +1,307 @@
+/* ─── Page Layout ─── */
+.strait-page {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 6rem 1rem 6rem;
+}
+
+/* ─── Back Link ─── */
+.strait-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+  opacity: 0.7;
+}
+.strait-back-link:hover { opacity: 1; }
+.strait-back-link-icon { width: 16px; height: 16px; }
+
+/* ─── Header ─── */
+.strait-header { margin-bottom: 3rem; }
+.strait-header-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.strait-header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.strait-threat-badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+.strait-description {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ─── Threat Gauge ─── */
+.strait-gauge {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+}
+.strait-gauge-svg { width: 88px; height: 88px; display: block; }
+.strait-gauge-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+.strait-gauge-label {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ─── Core Judgement ─── */
+.strait-judgement {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.06), rgba(59, 130, 246, 0.02));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-left: 3px solid #3b82f6;
+  border-radius: var(--radius-md);
+}
+.strait-judgement h2 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.strait-judgement p {
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─── Key Actors ─── */
+.strait-actors-section {
+  margin-bottom: 3.5rem;
+}
+.strait-actors-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.strait-actors-icon { width: 22px; height: 22px; color: var(--accent); }
+.strait-actors-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.strait-actors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.strait-actor-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: var(--transition);
+}
+.strait-actor-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+.strait-actor-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+.strait-actor-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ─── Content Sections (Risk Assessment / Scenario Planning) ─── */
+.strait-content-section {
+  margin-bottom: 3.5rem;
+}
+.strait-content-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.strait-content-section-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.strait-content-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.strait-content-view-all:hover { color: #fff; }
+.strait-content-view-icon { width: 16px; height: 16px; }
+
+.strait-content-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.strait-content-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  text-decoration: none;
+}
+.strait-content-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.strait-content-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+.strait-content-card__icon--pdf,
+.strait-content-card__icon--report { background: rgba(59, 130, 246, 0.1); }
+.strait-content-card__icon--audio { background: rgba(16, 185, 129, 0.1); }
+.strait-content-card__icon--presentation { background: rgba(168, 85, 247, 0.1); }
+.content-icon { width: 22px; height: 22px; }
+.icon-pdf { color: #3b82f6; }
+.icon-audio { color: #10b981; }
+.icon-presentation { color: #a855f7; }
+
+.strait-content-card__body { flex: 1; min-width: 0; }
+.strait-content-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.strait-content-card__badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+.badge-pdf { background: rgba(59, 130, 246, 0.12); color: #60a5fa; }
+.badge-audio { background: rgba(16, 185, 129, 0.12); color: #34d399; }
+.badge-report { background: rgba(59, 130, 246, 0.12); color: #60a5fa; }
+.badge-presentation { background: rgba(168, 85, 247, 0.12); color: #c084fc; }
+
+.strait-content-card__date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.strait-content-card__body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+.strait-content-card__body p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.strait-content-card__action {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+}
+.strait-content-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.cta-play .cta-icon { width: 12px; height: 12px; }
+.strait-content-card__cta:hover {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--accent);
+}
+.cta-arrow { width: 14px; height: 14px; }
+.strait-content-card:hover .cta-arrow { transform: translate(3px, -3px); }
+
+/* ─── Responsive ─── */
+@media (max-width: 700px) {
+  .strait-page { padding: 4rem 0.75rem 3rem; }
+  .strait-header-top { flex-direction: column; align-items: flex-start; }
+  .strait-content-card { flex-direction: column; gap: 0.75rem; }
+  .strait-content-card__action { align-self: flex-start; }
+  .strait-content-section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .strait-actors-grid { grid-template-columns: 1fr; }
+}
