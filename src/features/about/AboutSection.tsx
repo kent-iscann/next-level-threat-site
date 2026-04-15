@@ -10,7 +10,7 @@ export default function AboutSection() {
             We believe that understanding the global landscape requires more than just reading headlines. It demands rigorous historical excavation, meticulous open-source verification, and the application of advanced analytical frameworks. Knowledge should not just inform—it should prepare.
           </p>
           <p className="about__text">
-            At Next Level Threat, we bridge the gap between scattered open-source intelligence and strategic foresight, empowering individuals and organizations to navigate an increasingly volatile world with clarity and confidence.
+            Next Level Threat bridges the gap between scattered open-source intelligence and strategic foresight, empowering individuals and organizations to navigate an increasingly volatile world with clarity and confidence.
           </p>
           <div className="about__footer">
             <p className="about__group">A flagship intelligence solution by <span className="about__brand">IScann Group</span></p>

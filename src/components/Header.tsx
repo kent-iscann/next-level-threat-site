@@ -12,8 +12,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: 'Threat+', href: '#plus' },
-    { label: 'Free Podcasts', href: '#podcasts' },
+    { label: 'Signal & Fracture', href: '#plus' },
+    { label: 'Nexus', href: '#plus' },
+    { label: 'Open-Source Intelligence', href: '#podcasts' },
     { label: 'About', href: '#about' },
   ];
 
@@ -38,7 +39,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <a href="#plus" className="btn btn-primary nav__cta" onClick={() => setIsMenuOpen(false)}>Subscribe</a>
+          <a href="#plus" className="btn btn-primary nav__cta" onClick={() => setIsMenuOpen(false)}>View Demo</a>
         </nav>
       </div>
     </header>

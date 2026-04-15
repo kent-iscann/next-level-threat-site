@@ -1,4 +1,4 @@
-.faq { background-color: var(--bg-primary); }
+.faq { background-color: #1a1a1a; }
 .faq__header { text-align: center; margin-bottom: 1rem; }
 .faq__link { color: var(--accent); text-decoration: underline; }
 

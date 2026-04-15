@@ -2,8 +2,9 @@ import './Footer.css';
 
 export default function Footer() {
   const navLinks = [
-    { label: 'Free Podcasts', href: '#podcasts' },
-    { label: 'Next Level Threat+', href: '#plus' },
+    { label: 'Signal & Fracture', href: '#plus' },
+    { label: 'Nexus', href: '#nexus' },
+    { label: 'Open-Source Intelligence', href: '#podcasts' },
     { label: 'About', href: '#about' },
   ];
 
@@ -13,8 +14,8 @@ export default function Footer() {
         <div className="footer__top">
             <img width="48px" src="images/nlt_logo.png" alt="Next Level Threat Logo" />
             <h3 className="footer__title">Next Level Threat</h3>
-          <p className="footer__tagline">Geopolitical intelligence for a complex world.</p>
-          <a href="#plus" className="btn btn-primary footer__cta">Subscribe to Threat+</a>
+          <p className="footer__tagline">Your Chief Geopolitical Officer</p>
+          <a href="#plus" className="btn btn-primary footer__cta">View Demo</a>
         </div>
         <div className="footer__bottom">
           <nav className="footer__nav">

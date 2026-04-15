@@ -1,26 +1,27 @@
 import './SocialProof.css';
 
 const stats = [
-  { value: 'TBC', label: 'Active Subscribers' },
-  { value: 'TBC', label: 'Nexus Episodes' },
-  { value: 'TBC', label: 'Signal & Fracture Briefs' },
+  { value: '534', label: 'Active Subscribers' },
+  { value: '10', label: 'Signal & Fracture Briefs' },
+  { value: '24', label: 'Nexus Episodes' },
+
 ];
 
 const testimonials = [
   {
-    quote: '"Placeholder — testimonial quote from an early subscriber or client."',
-    name: 'Name & Title',
-    org: 'Organisation / Company',
+    quote: '"Next Level Threat quickly became an indispensible part of our workflow. We have a much better understanding of the regions we deal with and can provide our own clients with a better service."',
+    name: 'John, CEO',
+    org: 'Think Tank',
   },
   {
-    quote: '"Placeholder — testimonial quote about the quality of analysis or foresight."',
-    name: 'Name & Title',
-    org: 'Organisation / Company',
+    quote: '"Truth be told, we had not considered a Chief Geopolitical Officer before subscribing to Next Level Threat. Now we can\'t imagine life without one. There\'s really no alternative to being prepared."',
+    name: 'Jane, COO',
+    org: 'Investment Fund',
   },
   {
-    quote: '"Placeholder — testimonial quote about how Next Level Threat informed a decision."',
-    name: 'Name & Title',
-    org: 'Organisation / Company',
+    quote: '"What amazes me about Next Level Threat is their ability to identify geopolitical hotspots that are not on anyone\'s radar. And when something big does break, the analysis they put together is top notch."',
+    name: 'Jack, Founder',
+    org: 'New Media Company',
   },
 ];
 
