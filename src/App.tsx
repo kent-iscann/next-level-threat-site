@@ -1,6 +1,8 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
+<<<<<<< HEAD
 import HeroSection from './features/hero/HeroSection';
 import AudienceSection from './features/audience/AudienceSection';
 import NLTPlus from './features/plus/NLTPlus';
@@ -28,6 +30,26 @@ function App() {
       </main>
       <Footer />
     </div>
+=======
+import DashboardPage from './pages/DashboardPage';
+import TaiwanStraitPage from './pages/TaiwanStraitPage';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="app">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<DashboardPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/taiwan-strait" element={<TaiwanStraitPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
+>>>>>>> c391968 (Add static demo pages: dashboard and Taiwan Strait topic page)
   );
 }
 export default App;
