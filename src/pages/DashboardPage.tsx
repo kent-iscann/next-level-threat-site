@@ -11,7 +11,7 @@ const criticalRegions = [
 const latestActivity = [
   {
     icon: FileText,
-    title: 'Taiwan Strait — Military Posturing and Economic Signaling',
+    title: 'Taiwan Strait',
     description: 'Analysis of PLA amphibious readiness drills and their impact on semiconductor supply chain risk assessment.',
     date: '15/04/2026',
     path: '/taiwan-strait',
@@ -19,7 +19,7 @@ const latestActivity = [
   },
   {
     icon: Globe,
-    title: 'Iran — Strategic Realignment Under Sanctions Pressure',
+    title: 'Islamic Republic of Iran',
     description: 'Cross-domain intelligence mapping economic contours and diplomatic pathways in the current geopolitical landscape.',
     date: '01/04/2026',
     path: '#',
@@ -112,14 +112,14 @@ export default function DashboardPage() {
         </Link>
 
         <header className="dash-header">
-          <h1>Intelligence Dashboard</h1>
+          <h1>Next Level Threat Dashboard</h1>
           <p>Access content verticals and monitor critical threat regions</p>
         </header>
 
         <section className="dash-regions-section">
           <div className="dash-regions-header">
             <AlertTriangle className="dash-regions-icon" />
-            <h2>Critical Threat Regions</h2>
+            <h2>Threat Regions</h2>
           </div>
           <div className="dash-regions-grid">
             {criticalRegions.map(region => (
@@ -149,7 +149,7 @@ export default function DashboardPage() {
 
         <section className="dash-latest-section">
           <div className="dash-latest-header">
-            <h2>Latest Activity</h2>
+            <h2>Latest Intelligence</h2>
             <a href="#" className="dash-latest-view-all">View all <ArrowUpRight className="dash-latest-arrow" /></a>
           </div>
           <div className="dash-latest-feed">
@@ -176,7 +176,7 @@ export default function DashboardPage() {
         </section>
 
         <section className="dash-verticals-section">
-          <h2>Intelligence Library</h2>
+          <h2>Archive</h2>
           <div className="dash-verticals-grid">
             {verticals.map(vertical => {
               const Icon = vertical.icon;

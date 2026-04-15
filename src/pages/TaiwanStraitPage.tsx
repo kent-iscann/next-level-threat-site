@@ -7,8 +7,8 @@ const REGION_RISK = 92;
 const riskAssessment = [
   {
     id: 1,
-    type: 'pdf',
-    title: 'Full Report: Military Posturing and Economic Signaling',
+    type: 'report',
+    title: 'Full Report',
     description: 'Comprehensive analysis of PLA amphibious readiness drills and semiconductor supply chain risk.',
     date: '12/04/2026',
   },
@@ -21,8 +21,8 @@ const riskAssessment = [
   },
   {
     id: 3,
-    type: 'pdf',
-    title: 'Overview: Cross-Strait Dynamics',
+    type: 'presentation',
+    title: 'Overview',
     description: 'Summary of recent diplomatic movements and their implications for regional stability.',
     date: '08/04/2026',
   },
@@ -39,28 +39,28 @@ const scenarioPlanning = [
   {
     id: 2,
     type: 'report',
-    title: 'Economic Contours Under Sanctions Pressure',
+    title: 'Full Report',
     description: 'Scenario modeling of trade disruption cascades and secondary economic effects.',
     date: '10/04/2026',
   },
   {
     id: 6,
     type: 'audio',
-    title: '5-Minute Scenario Planning Overview',
+    title: '5-Minute Overview',
     description: 'Audio summary of the most likely escalation pathways and their economic impact.',
     date: '11/04/2026',
   },
   {
     id: 4,
     type: 'presentation',
-    title: 'Diplomatic Pathways & Red Lines',
+    title: 'Overview',
     description: 'Visual breakdown of diplomatic off-ramps, escalation triggers, and stakeholder positions.',
     date: '06/04/2026',
   },
   {
     id: 8,
     type: 'audio',
-    title: '20-Minute Deep Dive: Scenario Analysis',
+    title: '20-Minute Deep Dive',
     description: 'Extended scenario planning session covering blockade, quarantine, and kinetic action scenarios.',
     date: '28/03/2026',
   },
@@ -101,7 +101,6 @@ function RiskGauge({ score }: { score: number }) {
         />
       </svg>
       <span className="strait-gauge-value" style={{ color }}>{score}</span>
-      <span className="strait-gauge-label">THREAT INDEX</span>
     </div>
   );
 }
@@ -134,10 +133,9 @@ function ContentCard({ item }: { item: typeof riskAssessment[number] }) {
           <span className="strait-content-card__date">{item.date}</span>
         </div>
         <h3>{item.title}</h3>
-        <p>{item.description}</p>
       </div>
       <div className="strait-content-card__action">
-        {item.type === 'pdf' || item.type === 'report' ? (
+        {item.type === 'presentation' || item.type === 'report' ? (
           <span className="strait-content-card__cta">Download <ArrowUpRight className="cta-arrow" /></span>
         ) : (
           <span className="strait-content-card__cta cta-play"><Play className="cta-icon" />Play</span>
@@ -159,9 +157,9 @@ export default function TaiwanStraitPage() {
         <header className="strait-header">
           <div className="strait-header-top">
             <h1>Taiwan Strait</h1>
+            <span className="strait-threat-badge">CRITICAL</span>
             <RiskGauge score={REGION_RISK} />
           </div>
-          <span className="strait-threat-badge">CRITICAL THREAT LEVEL</span>
           <p className="strait-description">
             Real-time monitoring and analysis of the Taiwan Strait security environment.
             Covering military posturing, diplomatic developments, and economic impacts.
@@ -169,7 +167,7 @@ export default function TaiwanStraitPage() {
         </header>
 
         <section className="strait-judgement">
-          <h2>Core Judgement</h2>
+          <h2>Core Assessment</h2>
           <p>
             The Taiwan Strait is the single highest-consequence fracture point in the global system.
             A successful Chinese blockade or kinetic action against Taiwan would generate an estimated
