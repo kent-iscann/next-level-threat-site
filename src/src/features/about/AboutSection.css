@@ -1,0 +1,10 @@
+.about__content { max-width: 800px; margin: 0 auto; text-align: center; }
+.about__text {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+.about__footer { margin-top: 3rem; }
+.about__group { color: var(--text-muted); font-size: 0.95rem; }
+.about__brand { color: var(--accent); font-weight: 500; }
