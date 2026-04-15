@@ -70,9 +70,6 @@ export default function DashboardPage() {
             <AlertTriangle className="dash-regions-icon" />
             <h2>Critical Threat Regions</h2>
           </div>
-          <p className="dash-regions-subtitle">
-            Active fracture points requiring continuous monitoring and real-time intelligence.
-          </p>
           <div className="dash-regions-grid">
             {criticalRegions.map(region => (
               <div key={region.id} className={`region-card ${region.threatLevel}`}>
