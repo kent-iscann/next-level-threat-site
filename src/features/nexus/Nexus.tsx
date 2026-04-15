@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './Nexus.css';
 
 const benefitItems = [
@@ -48,14 +47,8 @@ const benefitItems = [
   },
 ];
 
-const plans = [
-  { key: 'monthly' as const, name: 'Monthly', price: '$29', period: '/mo', tag: 'Monthly', cta: 'Subscribe Now', highlight: false, savings: '' },
-  { key: 'annual' as const, name: 'Annual', price: '$199', period: '/yr', tag: 'Annual', cta: 'Subscribe Now (Save 20%)', highlight: true, savings: 'Save 20%' },
-];
 
 export default function NLTPlus() {
-  const [plan, setPlan] = useState<'monthly' | 'annual'>('annual');
-
   return (
     <section id="nexus" className="nexus section">
       <div className="container">
