@@ -1,4 +1,5 @@
 import './HeroSection.css';
+import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
   return (
@@ -13,7 +14,7 @@ export default function HeroSection() {
           AI-enhanced geopolitical intelligence that decodes today's complexities and anticipates tomorrow's critical threats.
         </p>
         <div className="hero__actions">
-          <a href="/dashboard" className="btn btn-primary">View Demo</a>
+          <Link to="/dashboard" className="btn btn-primary">View Demo</Link>
           <a href="#podcasts" className="btn btn-secondary">Explore Free Intelligence</a>
         </div>
       </div>

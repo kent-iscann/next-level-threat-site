@@ -21,7 +21,7 @@
 .dash-back-link-icon { width: 16px; height: 16px; }
 
 /* ─── Header ─── */
-.dash-header { margin-bottom: 2rem; }
+.dash-header { margin: 2rem auto; }
 .dash-header h1 {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 3.5rem);

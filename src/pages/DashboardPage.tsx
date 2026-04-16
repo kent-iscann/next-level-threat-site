@@ -107,9 +107,9 @@ export default function DashboardPage() {
     <div className="container">
       <div className="dashboard-page">
 
-        <Link to="/" className="dash-back-link">
+        {/* <Link to="/" className="dash-back-link">
           <ArrowLeft className="dash-back-link-icon" /> Back to Home
-        </Link>
+        </Link> */}
 
         <header className="dash-header">
           <h1>Next Level Threat Dashboard</h1>

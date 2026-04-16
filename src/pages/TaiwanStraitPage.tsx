@@ -195,8 +195,8 @@ export default function TaiwanStraitPage() {
         </section>
 
         <section className="strait-actors-section">
-          <div className="strait-actors-header">
-            <Users className="strait-actors-icon" />
+          <div className="strait-subheader">
+            <Users className="strait-icon" />
             <h2>Key Actors</h2>
           </div>
           <div className="strait-actors-grid">
@@ -210,8 +210,8 @@ export default function TaiwanStraitPage() {
         </section>
 
         <section className="strait-content-section">
-          <div className="strait-content-section-header">
-            <Newspaper className="strait-h2-icon" />
+          <div className="strait-subheader">
+            <Newspaper className="strait-icon" />
             <h2>Risk Assessment</h2>
             {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
           </div>
@@ -223,8 +223,8 @@ export default function TaiwanStraitPage() {
         </section>
 
         <section className="strait-content-section">
-          <div className="strait-content-section-header">
-            <MapPin className="strait-h2-icon" />
+          <div className="strait-subheader">
+            <MapPin className="strait-icon" />
             <h2>Scenario Planning</h2>
             {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
           </div>

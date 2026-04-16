@@ -10,7 +10,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--accent);
+  color: #3b82f6;
   font-size: 0.85rem;
   font-weight: 500;
   margin-bottom: 2rem;
@@ -28,7 +28,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #3b82f6;
+  color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
@@ -126,14 +126,14 @@
 .strait-actors-section {
   margin-bottom: 3.5rem;
 }
-.strait-actors-header {
+.strait-subheader {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
-.strait-actors-icon { width: 22px; height: 22px; color: var(--accent); }
-.strait-actors-header h2 {
+.strait-icon { width: 22px; height: 22px; color: var(--accent); }
+.strait-subheader h2 {
   font-family: var(--font-heading);
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 700;
@@ -143,9 +143,6 @@
   align-items: center;
   gap: 0.5rem;
 }
-
-/* ─── H2 icon (shared for all strait h2 headings) ─── */
-.strait-h2-icon { width: 22px; height: 22px; flex-shrink: 0; }
 
 .strait-actors-grid {
   display: grid;

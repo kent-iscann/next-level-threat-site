@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { UserCircle } from 'lucide-react';
 import './Header.css';
 
@@ -22,9 +22,9 @@ export default function Header() {
   if (isDemoPage) {
     return (
       <header className={`header ${isScrolled ? 'header--scrolled' : ''} header--demo`}>
-        <div className="container header__inner">
+        <div className="container header__inner" style={{ justifyContent: 'space-between' }}>
           <div className="logo">
-            <a href="/"><img src="images/nlt_logo.png" alt="Next Level Threat Logo" /></a>
+            <Link to="/"><img src="images/nlt_logo.png" alt="Next Level Threat Logo" /></Link>
           </div>
           <div className="header__demo-right">
             <UserCircle className="header__avatar-icon" />
@@ -46,7 +46,7 @@ export default function Header() {
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="container header__inner">
           <div className="logo">
-            <a href="/"><img src="images/nlt_logo.png" alt="Next Level Threat Logo" /></a>
+            <Link to="/"><img src="images/nlt_logo.png" alt="Next Level Threat Logo" /></Link>
           </div>
 
         <button className="header__toggle" aria-label="Toggle menu" aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -63,7 +63,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <a href="/dashboard" className="btn btn-primary nav__cta" onClick={() => setIsMenuOpen(false)}>View Demo</a>
+          <Link to="/dashboard" className="btn btn-primary nav__cta" onClick={() => setIsMenuOpen(false)}>View Demo</Link>
         </nav>
       </div>
     </header>

@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './Footer.css';
 
 const DEMO_PAGES = ['/dashboard', '/taiwan-strait', '/nexus-iran'];
@@ -20,7 +20,7 @@ export default function Footer() {
             <img width="48px" src="images/nlt_logo.png" alt="Next Level Threat Logo" />
             <h3 className="footer__title">Next Level Threat</h3>
           <p className="footer__tagline">Your Chief Geopolitical Officer</p>
-          {!isDemoPage && <a href="/dashboard" className="btn btn-primary footer__cta">View Demo</a>}
+          {!isDemoPage && <Link to="/dashboard" className="btn btn-primary footer__cta">View Demo</Link>}
         </div>
         <div className="footer__bottom">
           <nav className="footer__nav">

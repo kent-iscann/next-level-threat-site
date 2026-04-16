@@ -1,5 +1,5 @@
 import './NexusIranPage.css';
-import { ArrowLeft, FileText, Presentation, Headphones, ArrowUpRight, Target } from 'lucide-react';
+import { ArrowLeft, FileText, Presentation, Headphones, ArrowUpRight, Target, Shovel, Binoculars } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const riskAssessment = [
@@ -170,7 +170,8 @@ export default function TaiwanStraitPage() {
         </section>
 
         <section className="strait-content-section">
-          <div className="strait-content-section-header">
+          <div className="strait-subheader">
+            <Shovel className="strait-icon" />
             <h2>Historical Excavation</h2>
           </div>
           <div className="strait-content-grid">
@@ -181,7 +182,8 @@ export default function TaiwanStraitPage() {
         </section>
 
         <section className="strait-content-section">
-          <div className="strait-content-section-header">
+          <div className="strait-subheader">
+            <Binoculars className="strait-icon" />
             <h2>Future Outlook</h2>
           </div>
           <div className="strait-content-grid">
