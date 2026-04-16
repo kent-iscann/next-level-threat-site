@@ -1,5 +1,5 @@
 import './DashboardPage.css';
-import { ArrowLeft, AlertTriangle, ExternalLink, FileText, Radio, Calendar, Globe, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, AlertTriangle, ExternalLink, FileText, Radio, Calendar, Globe, ArrowUpRight, Newspaper, Archive } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const criticalRegions = [
@@ -148,6 +148,7 @@ export default function DashboardPage() {
 
         <section className="dash-latest-section">
           <div className="dash-latest-header">
+            <Newspaper className="dash-latest-header-icon" />
             <h2>Latest Intelligence</h2>
             {/* <a href="#" className="dash-latest-view-all">View all <ArrowUpRight className="dash-latest-arrow" /></a> */}
           </div>
@@ -175,7 +176,7 @@ export default function DashboardPage() {
         </section>
 
         <section className="dash-verticals-section">
-          <h2>Archive</h2>
+          <h2><Archive className="dash-verticals-h2-icon" /> Archive</h2>
           <div className="dash-verticals-grid">
             {verticals.map(vertical => {
               const Icon = vertical.icon;

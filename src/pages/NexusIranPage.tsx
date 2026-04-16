@@ -1,5 +1,5 @@
 import './NexusIranPage.css';
-import { ArrowLeft, FileText, Play, Presentation, Headphones, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, FileText, Presentation, Headphones, ArrowUpRight, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const riskAssessment = [
@@ -153,6 +153,7 @@ export default function TaiwanStraitPage() {
         </Link>
 
         <header className="strait-header">
+          <span className="strait-brand-label">NEXUS</span>
           <div className="strait-header-top">
             <h1>Islamic Republic of Iran</h1>
           </div>
@@ -162,7 +163,7 @@ export default function TaiwanStraitPage() {
         </header>
 
         <section className="strait-judgement">
-          <h2>Core Assessment</h2>
+          <h2><Target className="strait-h2-icon" /> Core Assessment</h2>
           <p>
             The Islamic Republic of Iran remains underestimated by the United States, Israel, and its other adversaries. This is not the Ottoman or Persian empire of the early 20th century. This is a hardened regime strengthened by 40+ years of life under sanctions and war. Nuclear weapons capabilities or not, there should be no expectation that the regime will fall or that the recent war created the conditions for revolution. If anything, the opposite should be assumed. The IRGC remains the dominant force in the country and its power has only increased as a result of the recent strikes.
           </p>

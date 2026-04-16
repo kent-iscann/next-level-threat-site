@@ -84,3 +84,25 @@
   .nav { display: flex; align-items: center; gap: 2rem; }
   .nav__cta { display: inline-flex; }
 }
+
+/* ─── Demo Page Header (simplified) ─── */
+.header--demo .header__inner { justify-content: flex-end; gap: 2rem; }
+.header--demo .logo { order: 1; }
+.header__demo-right {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header__avatar-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+.header__greeting {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}

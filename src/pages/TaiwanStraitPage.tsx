@@ -1,5 +1,5 @@
 import './TaiwanStraitPage.css';
-import { ArrowLeft, FileText, Play, Presentation, Headphones, ArrowUpRight, Users } from 'lucide-react';
+import { ArrowLeft, FileText, Presentation, Headphones, ArrowUpRight, Users, Target, MapPin, Newspaper } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const REGION_RISK = 90;
@@ -46,6 +46,7 @@ const scenarioPlanning = [
     title: 'Full Report',
     description: 'Scenario modeling of trade disruption cascades and secondary economic effects.',
     date: '10/04/2026',
+    source: '',
   },
   {
     id: 6,
@@ -53,6 +54,7 @@ const scenarioPlanning = [
     title: '5-Minute Overview',
     description: 'Audio summary of the most likely escalation pathways and their economic impact.',
     date: '11/04/2026',
+    source: '',
   },
   {
     id: 4,
@@ -60,6 +62,7 @@ const scenarioPlanning = [
     title: 'Overview',
     description: 'Visual breakdown of diplomatic off-ramps, escalation triggers, and stakeholder positions.',
     date: '06/04/2026',
+    source: '',
   },
   {
     id: 8,
@@ -67,6 +70,7 @@ const scenarioPlanning = [
     title: '20-Minute Deep Dive',
     description: 'Extended scenario planning session covering blockade, quarantine, and kinetic action scenarios.',
     date: '28/03/2026',
+    source: '',
   },
 ];
 
@@ -166,6 +170,7 @@ export default function TaiwanStraitPage() {
         </Link>
 
         <header className="strait-header">
+          <span className="strait-brand-label">SIGNAL &amp; FRACTURE</span>
           <div className="strait-header-top">
             <h1>Taiwan Strait</h1>
             <span className="strait-threat-badge">CRITICAL</span>
@@ -178,7 +183,7 @@ export default function TaiwanStraitPage() {
         </header>
 
         <section className="strait-judgement">
-          <h2>Core Assessment</h2>
+          <h2><Target className="strait-h2-icon" /> Core Assessment</h2>
           <p>
             The Taiwan Strait is the single highest-consequence fracture point in the global system.
             A successful Chinese blockade or kinetic action against Taiwan would generate an estimated
@@ -206,6 +211,7 @@ export default function TaiwanStraitPage() {
 
         <section className="strait-content-section">
           <div className="strait-content-section-header">
+            <Newspaper className="strait-h2-icon" />
             <h2>Risk Assessment</h2>
             {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
           </div>
@@ -218,6 +224,7 @@ export default function TaiwanStraitPage() {
 
         <section className="strait-content-section">
           <div className="strait-content-section-header">
+            <MapPin className="strait-h2-icon" />
             <h2>Scenario Planning</h2>
             {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
           </div>

@@ -22,6 +22,16 @@
 
 /* ─── Header ─── */
 .strait-header { margin-bottom: 3rem; }
+.strait-brand-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #3b82f6;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
 .strait-header-top {
   display: flex;
   align-items: center;
@@ -129,7 +139,13 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+
+/* ─── H2 icon (shared for all strait h2 headings) ─── */
+.strait-h2-icon { width: 22px; height: 22px; flex-shrink: 0; }
 
 .strait-actors-grid {
   display: grid;
@@ -167,8 +183,8 @@
 }
 .strait-content-section-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 .strait-content-section-header h2 {
