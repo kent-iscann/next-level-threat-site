@@ -63,7 +63,12 @@ export default function NLTPlus() {
             <h3 className="tease-card__title">Country Analysis</h3>
             <p className="tease-card__desc">Understand the complexities of the countries at the center of geopolitics.</p>
             <div className="tease-card__player">
-              <div className="placeholder-embed">Spotify Embed (Coming Soon)</div>
+              <div className="placeholder-embed">
+                <audio controls>
+                  <source src="Nexus - Iran - Episode 1.mp3" type="audio/mpeg" />
+                  Your browser does not support the audio tag.
+                </audio>
+              </div>
             </div>
           </div>
           <div className="card tease-card tease-card--signal">

@@ -7,21 +7,22 @@ const riskAssessment = [
     id: 1,
     type: 'audio',
     title: 'Persia',
-    description: 'Before the Republic, before Islam\'s arrival, before the foreign powers — there was Persia. Two and a half thousand years of empire, poetry, mathematics, and civilizational self-confidence.',
+    description: 'Before the Republic, before Islam\'s arrival, before the foreign powers — there was Persia.',
     date: '12/04/2026',
+    source: 'Nexus - Iran - Episode 1.mp3'
   },
   {
     id: 2,
     type: 'audio',
     title: 'Oil',
-    description: 'The resource that made Iran a target. From the 1901 D\'Arcy concession — negotiated with a weakened Qajar monarchy for a fraction of its worth — through Mosaddegh\'s nationalization, the Shah\'s petrodollar boom, and the sanctions era. ',
+    description: 'The resource that made Iran a target.',
     date: '13/04/2026',
   },
   {
     id: 3,
     type: 'audio',
     title: 'Empire',
-    description: 'Britain first, then America. How great powers managed Iran as an asset rather than a nation. The long biography of being useful to others, and what it deposits in the national psyche.',
+    description: 'Britain first, then America. How great powers managed Iran as an asset rather than a nation.',
     date: '08/04/2026',
   },
   {
@@ -89,6 +90,17 @@ const riskAssessment = [
   },
 ];
 
+const futureOutlook = [
+  {
+    id: 1,
+    type: 'report',
+    title: '12-Month Projection (Q2 2026 - Q1 2027)',
+    description: 'What to expect over the next 12 months based on current indicators and historical patterns.',
+    date: '12/04/2026',
+    source: 'Nexus - Iran - Future.pdf'
+  },
+]
+
 function ContentIcon({ type }: { type: string }) {
   switch (type) {
     case 'pdf':
@@ -115,9 +127,16 @@ function ContentCard({ item }: { item: typeof riskAssessment[number] }) {
       </div>
       <div className="strait-content-card__action">
         {item.type === 'presentation' || item.type === 'report' ? (
-          <span className="strait-content-card__cta">Download <ArrowUpRight className="cta-arrow" /></span>
+          <a href={item.source} className="strait-content-card__cta" target="_blank" rel="noopener noreferrer">
+            Read <ArrowUpRight className="cta-arrow" />
+          </a>
         ) : (
-          <span className="strait-content-card__cta cta-play"><Play className="cta-icon" />Play</span>
+          <span className="strait-content-card__cta cta-play">
+            <audio controls>
+              <source src={item.source} type="audio/mpeg" />
+              Your browser does not support the audio tag.
+            </audio>
+          </span>
         )}
       </div>
     </a>
@@ -145,7 +164,7 @@ export default function TaiwanStraitPage() {
         <section className="strait-judgement">
           <h2>Core Assessment</h2>
           <p>
-            The Islamic Republic of Iran remains underestimated by the United States, Israel, and its other adversaries. This is not the Ottoman or Persian empire of the early 20th century. This is a hardened regime strengthened by 40+ years of life under sanctions and war. Nuclear weapons capabilities or not, there should be no expectation that the regime will fall or that the recent war created the conditions for revolution. If anything, the opposite should be assumed.
+            The Islamic Republic of Iran remains underestimated by the United States, Israel, and its other adversaries. This is not the Ottoman or Persian empire of the early 20th century. This is a hardened regime strengthened by 40+ years of life under sanctions and war. Nuclear weapons capabilities or not, there should be no expectation that the regime will fall or that the recent war created the conditions for revolution. If anything, the opposite should be assumed. The IRGC remains the dominant force in the country and its power has only increased as a result of the recent strikes.
           </p>
         </section>
 
@@ -155,6 +174,17 @@ export default function TaiwanStraitPage() {
           </div>
           <div className="strait-content-grid">
             {riskAssessment.map(item => (
+              <ContentCard key={item.id} item={item} />
+            ))}
+          </div>
+        </section>
+
+        <section className="strait-content-section">
+          <div className="strait-content-section-header">
+            <h2>Future Outlook</h2>
+          </div>
+          <div className="strait-content-grid">
+            {futureOutlook.map(item => (
               <ContentCard key={item.id} item={item} />
             ))}
           </div>

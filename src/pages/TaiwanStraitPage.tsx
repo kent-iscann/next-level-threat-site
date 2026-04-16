@@ -2,7 +2,7 @@ import './TaiwanStraitPage.css';
 import { ArrowLeft, FileText, Play, Presentation, Headphones, ArrowUpRight, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const REGION_RISK = 92;
+const REGION_RISK = 90;
 
 const riskAssessment = [
   {
@@ -11,6 +11,7 @@ const riskAssessment = [
     title: 'Full Report',
     description: 'Comprehensive analysis of PLA amphibious readiness drills and semiconductor supply chain risk.',
     date: '12/04/2026',
+    source: 'SF - Taiwan - Risk - Report.pdf',
   },
   {
     id: 5,
@@ -18,6 +19,7 @@ const riskAssessment = [
     title: '5-Minute Overview',
     description: 'Quick briefing on the current threat posture and key indicators to watch.',
     date: '13/04/2026',
+    source: 'SF - Taiwan - Risk - Short Audio.mp3',
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const riskAssessment = [
     title: 'Overview',
     description: 'Summary of recent diplomatic movements and their implications for regional stability.',
     date: '08/04/2026',
+    source: 'SF - Taiwan - Risk - Overview.pdf',
   },
   {
     id: 7,
@@ -32,6 +35,7 @@ const riskAssessment = [
     title: '20-Minute Deep Dive',
     description: 'Extended analysis of military exercises, economic leverage points, and US force posture.',
     date: '30/03/2026',
+    source: 'SF - Taiwan - Risk - Long Audio.mp3',
   },
 ];
 
@@ -136,9 +140,16 @@ function ContentCard({ item }: { item: typeof riskAssessment[number] }) {
       </div>
       <div className="strait-content-card__action">
         {item.type === 'presentation' || item.type === 'report' ? (
-          <span className="strait-content-card__cta">Download <ArrowUpRight className="cta-arrow" /></span>
+          <a href={item.source} className="strait-content-card__cta" target="_blank" rel="noopener noreferrer">
+            Read <ArrowUpRight className="cta-arrow" />
+          </a>
         ) : (
-          <span className="strait-content-card__cta cta-play"><Play className="cta-icon" />Play</span>
+          <span className="strait-content-card__cta cta-play">
+            <audio controls>
+              <source src={item.source} type="audio/mpeg" />
+              Your browser does not support the audio tag.
+            </audio>
+          </span>
         )}
       </div>
     </a>

@@ -3,7 +3,7 @@ import { ArrowLeft, AlertTriangle, ExternalLink, FileText, Radio, Calendar, Glob
 import { Link } from 'react-router-dom';
 
 const criticalRegions = [
-  { id: 'taiwan-strait', name: 'Taiwan Strait', threatLevel: 'critical', path: '/taiwan-strait', riskScore: 92 },
+  { id: 'taiwan-strait', name: 'Taiwan Strait', threatLevel: 'critical', path: '/taiwan-strait', riskScore: 90 },
   { id: 'sahel', name: 'Sahel', threatLevel: 'critical', path: '/sahel', riskScore: 78 },
   { id: 'black-sea', name: 'Black Sea', threatLevel: 'critical', path: '/black-sea', riskScore: 85 },
 ];
@@ -53,7 +53,7 @@ const verticals = [
     title: 'Weekly Briefings',
     description: 'Summarized key developments from the past week',
     items: [
-      { label: 'Week #14', date: '', path: '#' },
+      { label: 'Week #14', date: '17/04/2026', path: '#' },
       { label: 'Week #13', date: '', path: '#' },
       { label: 'Week #12', date: '', path: '#' },
     ],
@@ -149,13 +149,13 @@ export default function DashboardPage() {
         <section className="dash-latest-section">
           <div className="dash-latest-header">
             <h2>Latest Intelligence</h2>
-            <a href="#" className="dash-latest-view-all">View all <ArrowUpRight className="dash-latest-arrow" /></a>
+            {/* <a href="#" className="dash-latest-view-all">View all <ArrowUpRight className="dash-latest-arrow" /></a> */}
           </div>
           <div className="dash-latest-feed">
             {latestActivity.map((item, i) => {
               const Icon = item.icon;
               return (
-                <a key={i} href={item.path} className="dash-latest-card">
+                <Link key={i} to={item.path} className="dash-latest-card">
                   <div className="dash-latest-card__icon-wrap">
                     <Icon className="dash-latest-card__icon" />
                   </div>
@@ -168,7 +168,7 @@ export default function DashboardPage() {
                     <p className="dash-latest-card__desc">{item.description}</p>
                   </div>
                   <ArrowUpRight className="dash-latest-card__arrow" />
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -189,10 +189,10 @@ export default function DashboardPage() {
                   <ul className="dash-vertical-card__list">
                     {vertical.items.map((item, i) => (
                       <li key={i} className="dash-vertical-card__item">
-                        <a href={item.path} className="dash-vertical-card__item-link">
+                        <Link to={item.path} className="dash-vertical-card__item-link">
                           <span className="dash-vertical-card__item-label">{item.label}</span>
                           {item.date && <span className="dash-vertical-card__item-date">{item.date}</span>}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
