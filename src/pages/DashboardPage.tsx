@@ -1,5 +1,5 @@
 import './DashboardPage.css';
-import { ArrowLeft, AlertTriangle, ExternalLink, FileText, Radio, Calendar, Globe, ArrowUpRight, Newspaper, Archive } from 'lucide-react';
+import { AlertTriangle, ExternalLink, FileText, Radio, Calendar, Globe, ArrowUpRight, Newspaper, Archive } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const criticalRegions = [
@@ -11,10 +11,10 @@ const criticalRegions = [
 const latestActivity = [
   {
     icon: FileText,
-    title: 'Taiwan Strait',
+    title: 'Taiwan Strait Blockade',
     description: 'Analysis of PLA amphibious readiness drills and their impact on semiconductor supply chain risk assessment.',
     date: '15/04/2026',
-    path: '/taiwan-strait',
+    path: '/signal-fracture/taiwan-strait-blockade',
     source: 'Signal & Fracture',
   },
   {
@@ -22,7 +22,7 @@ const latestActivity = [
     title: 'Islamic Republic of Iran',
     description: 'Explaining modern-day Iran through historical excavation.',
     date: '01/04/2026',
-    path: '/nexus-iran',
+    path: '/nexus/islamic-republic-iran',
     source: 'Nexus',
   },
 ];
@@ -33,7 +33,7 @@ const verticals = [
     title: 'Signal & Fracture',
     description: 'Primary intelligence stream with in-depth reports and analysis',
     items: [
-      { label: 'Taiwan Strait', date: '15/04/2026', path: '/taiwan-strait' },
+      { label: 'Taiwan Strait', date: '15/04/2026', path: '/signal-fracture/taiwan-strait-blockade' },
       { label: 'Sahel', date: '01/04/2026', path: '#' },
       { label: 'Black Sea', date: '16/03/2026', path: '#' },
     ],
@@ -43,9 +43,9 @@ const verticals = [
     title: 'Nexus',
     description: 'Cross-domain connections and systemic risk mapping',
     items: [
-      { label: 'Islamic Republic of Iran', date: '01/04/2026', path: '/nexus-iran' },
+      { label: 'Islamic Republic of Iran', date: '01/04/2026', path: '/nexus/islamic-republic-iran' },
       { label: 'Venezuela', date: '28/03/2026', path: '#' },
-      { label: 'Taiwan', date: '14/03/2026', path: '#' },
+      { label: 'Israel', date: '14/03/2026', path: '#' },
     ],
   },
   {
@@ -53,9 +53,9 @@ const verticals = [
     title: 'Weekly Briefings',
     description: 'Summarized key developments from the past week',
     items: [
-      { label: 'Week #14', date: '17/04/2026', path: '#' },
-      { label: 'Week #13', date: '', path: '#' },
-      { label: 'Week #12', date: '', path: '#' },
+      { label: 'Taiwan Strait', date: '17/04/2026', path: '#' },
+      { label: 'Sahel', date: '10/04/2026', path: '#' },
+      { label: 'Black Sea', date: '03/04/2026', path: '#' },
     ],
   },
   {
@@ -63,9 +63,9 @@ const verticals = [
     title: 'Quarterly Updates',
     description: 'Comprehensive strategic reviews each quarter',
     items: [
-      { label: 'Q1 2026', date: '', path: '#' },
-      { label: 'Q4 2025', date: '', path: '#' },
-      { label: 'Q3 2025', date: '', path: '#' },
+      { label: 'Q1 2026', date: '31/03/2026', path: '#' },
+      { label: 'Q4 2025', date: '31/12/2025', path: '#' },
+      { label: 'Q3 2025', date: '30/09/2025', path: '#' },
     ],
   },
 ];

@@ -1,0 +1,120 @@
+{
+    "uid": "taiwan-strait-blockade",
+    "title":"Taiwan Strait Blockade",
+    "subtitle":"Real-time monitoring and analysis of the Taiwan Strait security environment. Covering military posturing, diplomatic developments, and economic impacts.",
+    "threat_level": "CRITICAL",
+    "scores": {
+            "composite_risk": 90,
+            "probability": 90,
+            "impact": 100
+    },
+    "core_assessment": "The Taiwan Strait is the single highest-consequence fracture point in the global system. A successful Chinese blockade or kinetic action against Taiwan would generate an estimated $10 trillion in first-year global economic damage, collapse the semiconductor supply chain that underpins every advanced economy, and force the most consequential US strategic decision since 1962. The question is not whether this fracture is possible &mdash; it is whether the international community has built the decision architecture to manage it before it becomes irreversible.",
+    "categories": [
+        {
+            "id": 1,
+            "name": "Geopolitical"
+        }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "Semiconductors"
+        }
+    ],
+    "regions": [
+        {
+            "id": 1,
+            "name": "Taiwan Strait"
+        },
+        {
+            "id": 2,
+            "name": "East Asia"
+        },
+        {
+            "id": 3,
+            "name": "Asia-Pacific"
+        }
+    ],
+    "key_actors": [
+        {
+            "id": 1,
+            "name": "China",
+            "stake": "PLA Navy amphibious assault capability; economic coercion toolkit."
+        },
+        {
+            "id": 1,
+            "name": "United States",
+            "stake": "Forward-deployed forces; semiconductor supply chain dependency."
+        },
+        {
+            "id": 1,
+            "name": "Japan",
+            "stake": "Defensive modernization (ASCM, mobile air defence); domestic resilience."
+        },
+        {
+            "id": 1,
+            "name": "Taiwan",
+            "stake": "US alliance obligations; geographic exposure to blockade."
+        }   
+    ],
+    "risk_content": [
+        {
+            "id": 1,
+            "type": "report",
+            "title": "Full Report",
+            "description": "Comprehensive analysis of PLA amphibious readiness drills and semiconductor supply chain risk.",
+            "date": "12/04/2026",
+            "source": "/SF - Taiwan - Risk - Report.pdf"
+        },
+        {
+            "id": 2,
+            "type": "audio",
+            "title": "5-Minute Overview",
+            "description": "Quick briefing on the current threat posture and key indicators to watch.",
+            "date": "13/04/2026",
+            "source": "/SF - Taiwan - Risk - Short Audio.mp3"
+        },
+        {
+            "id": 3,
+            "type": "report",
+            "title": "Overview",
+            "description": "Summary of recent diplomatic movements and their implications for regional stability.",
+            "date": "08/04/2026",
+            "source": "/SF - Taiwan - Risk - Overview.pdf"
+        },
+        {
+            "id": 4,
+            "type": "audio",
+            "title": "20-Minute Deep Dive",
+            "description": "Extended analysis of military exercises, economic leverage points, and US force posture.",
+            "date": "30/03/2026",
+            "source": "/SF - Taiwan - Risk - Long Audio.mp3"
+        }
+    ],
+    "scenario_content": [
+        {
+            "id": 1,
+            "type": "report",
+            "title": "Full Report",
+            "description": "Comprehensive analysis of PLA amphibious readiness drills and semiconductor supply chain risk.",
+            "date": "12/04/2026",
+            "source": "/SF - Taiwan - Scenario - Report.pdf"
+        },
+        {
+            "id": 6,
+            "type": "audio",
+            "title": "10-Minute Overview",
+            "description": "Audio summary of the most likely escalation pathways and their economic impact.",
+            "date": "11/04/2026",
+            "source": ""
+        },
+        {
+            "id": 4,
+            "type": "report",
+            "title": "Overview",
+            "description": "Visual breakdown of diplomatic off-ramps, escalation triggers, and stakeholder positions.",
+            "date": "06/04/2026",
+            "source": ""
+        }
+    ]
+}

@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import DashboardPage from './pages/DashboardPage';
-import TaiwanStraitPage from './pages/TaiwanStraitPage';
-import NexusIranPage from './pages/NexusIranPage';
+import SignalFractureSlugPage from './pages/signal-fracture/[slug]';
+import NexusSlugPage from './pages/nexus/[slug]';
 import Landing from './pages/Landing';
 
 function ScrollToTop() {
@@ -26,8 +26,8 @@ function App() {
           <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/dashboard" element={<DashboardPage />} />
-              <Route path="/taiwan-strait" element={<TaiwanStraitPage />} />
-              <Route path="/nexus-iran" element={<NexusIranPage />} />
+              <Route path="/signal-fracture/:slug" element={<SignalFractureSlugPage />} />
+              <Route path="/nexus/:slug" element={<NexusSlugPage />} />
           </Routes>
         </main>
         <Footer />

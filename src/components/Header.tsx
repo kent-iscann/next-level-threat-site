@@ -3,14 +3,15 @@ import { useLocation, Link } from 'react-router-dom';
 import { UserCircle } from 'lucide-react';
 import './Header.css';
 
-// Paths where the header should be simplified (no nav menu, no CTA)
-const DEMO_PAGES = ['/dashboard', '/taiwan-strait', '/nexus-iran'];
-
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  const isDemoPage = DEMO_PAGES.includes(location.pathname);
+  const { pathname } = useLocation();
+  const cleanPath = pathname.replace(/\/+$/, '');
+  const isDemoPage =
+    cleanPath.startsWith('/dashboard') ||
+    cleanPath.startsWith('/signal-fracture') ||
+    cleanPath.startsWith('/nexus');
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -24,7 +25,7 @@ export default function Header() {
       <header className={`header ${isScrolled ? 'header--scrolled' : ''} header--demo`}>
         <div className="container header__inner" style={{ justifyContent: 'space-between' }}>
           <div className="logo">
-            <Link to="/"><img src="images/nlt_logo.png" alt="Next Level Threat Logo" /></Link>
+            <Link to="/"><img src="/images/nlt_logo.png" alt="Next Level Threat Logo" /></Link>
           </div>
           <div className="header__demo-right">
             <UserCircle className="header__avatar-icon" />
@@ -46,7 +47,7 @@ export default function Header() {
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="container header__inner">
           <div className="logo">
-            <Link to="/"><img src="images/nlt_logo.png" alt="Next Level Threat Logo" /></Link>
+            <Link to="/"><img src="/images/nlt_logo.png" alt="Next Level Threat Logo" /></Link>
           </div>
 
         <button className="header__toggle" aria-label="Toggle menu" aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>

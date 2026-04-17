@@ -1,11 +1,14 @@
 import { useLocation, Link } from 'react-router-dom';
 import './Footer.css';
 
-const DEMO_PAGES = ['/dashboard', '/taiwan-strait', '/nexus-iran'];
-
 export default function Footer() {
-  const location = useLocation();
-  const isDemoPage = DEMO_PAGES.includes(location.pathname);
+  const { pathname } = useLocation();
+  const cleanPath = pathname.replace(/\/+$/, '');
+  const isDemoPage =
+    cleanPath.startsWith('/dashboard') ||
+    cleanPath.startsWith('/signal-fracture') ||
+    cleanPath.startsWith('/nexus');
+
   const navLinks = [
     { label: 'Signal & Fracture', href: '#plus' },
     { label: 'Nexus', href: '#nexus' },
@@ -17,7 +20,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__top">
-            <img width="48px" src="images/nlt_logo.png" alt="Next Level Threat Logo" />
+            <img width="48px" src="/images/nlt_logo.png" alt="Next Level Threat Logo" />
             <h3 className="footer__title">Next Level Threat</h3>
           <p className="footer__tagline">Your Chief Geopolitical Officer</p>
           {!isDemoPage && <Link to="/dashboard" className="btn btn-primary footer__cta">View Demo</Link>}

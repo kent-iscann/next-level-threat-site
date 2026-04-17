@@ -1,0 +1,132 @@
+{
+    "uid": "islamic-republic-iran",
+    "title":"Islamic Republic of Iran",
+    "subtitle":"Analysing the characteristics that make Iran an enduring and difficult adversary.",
+    "core_assessment": "The Islamic Republic of Iran remains underestimated by the United States, Israel, and its other adversaries. This is not the Ottoman or Persian empire of the early 20th century. This is a hardened regime strengthened by 40+ years of life under sanctions and war. Nuclear weapons capabilities or not, there should be no expectation that the regime will fall or that the recent war created the conditions for revolution. If anything, the opposite should be assumed. The IRGC remains the dominant force in the country and its power has only increased as a result of the recent strikes.",
+    "categories": [
+        {
+            "id": 1,
+            "name": "Geopolitical"
+        }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "Semiconductors"
+        }
+    ],
+    "regions": [
+        {
+            "id": 1,
+            "name": "Middle East"
+        }
+    ],
+    "excavation_content": [
+        {
+            "id": 1,
+            "type": "audio",
+            "title": "Persia",
+            "description": "Before the Republic, before Islam's arrival, before the foreign powers — there was Persia.",
+            "date": "12/04/2026",
+            "source": "/Nexus - Iran - Episode 1.mp3"
+        },
+        {
+            "id": 2,
+            "type": "audio",
+            "title": "Oil",
+            "description": "The resource that made Iran a target.",
+            "date": "13/04/2026",
+            "source": "/Nexus - Iran - Episode 2.mp3"
+        },
+        {
+            "id": 3,
+            "type": "audio",
+            "title": "Empire",
+            "description": "Britain first, then America. How great powers managed Iran as an asset rather than a nation.",
+            "date": "08/04/2026",
+            "source": "/Nexus - Iran - Episode 3.mp3"
+        },
+        {
+            "id": 4,
+            "type": "audio",
+            "title": "Nationalism",
+            "description": "Extended analysis of military exercises, economic leverage points, and US force posture.",
+            "date": "30/03/2026",
+            "source": "/Nexus - Iran - Episode 4.mp3"
+        },
+        {
+            "id": 5,
+            "type": "audio",
+            "title": "Revolution",
+            "description": "Comprehensive analysis of PLA amphibious readiness drills and semiconductor supply chain risk.",
+            "date": "12/04/2026",
+            "source": "/Nexus - Iran - Episode 5.mp3"
+        },
+        {
+            "id": 6,
+            "type": "audio",
+            "title": "Martyrdom",
+            "description": "Quick briefing on the current threat posture and key indicators to watch.",
+            "date": "13/04/2026",
+            "source": "/Nexus - Iran - Episode 6.mp3"
+        },
+        {
+            "id": 7,
+            "type": "audio",
+            "title": "The Enemy",
+            "description": "Summary of recent diplomatic movements and their implications for regional stability.",
+            "date": "08/04/2026",
+            "source": "/Nexus - Iran - Episode 7.mp3"
+        },
+        {
+            "id": 8,
+            "type": "audio",
+            "title": "Sanctions",
+            "description": "Extended analysis of military exercises, economic leverage points, and US force posture.",
+            "date": "30/03/2026",
+            "source": "/Nexus - Iran - Episode 8.mp3"
+        },
+        {
+            "id": 9,
+            "type": "audio",
+            "title": "The Arm",
+            "description": "Comprehensive analysis of PLA amphibious readiness drills and semiconductor supply chain risk.",
+            "date": "12/04/2026",
+            "source": "/Nexus - Iran - Episode 9.mp3"
+        },
+        {
+            "id": 10,
+            "type": "audio",
+            "title": "The Bomb",
+            "description": "Quick briefing on the current threat posture and key indicators to watch.",
+            "date": "13/04/2026",
+            "source": "/Nexus - Iran - Episode 10.mp3"
+        },
+        {
+            "id": 11,
+            "type": "audio",
+            "title": "The Street",
+            "description": "Summary of recent diplomatic movements and their implications for regional stability.",
+            "date": "08/04/2026",
+            "source": "/Nexus - Iran - Episode 11.mp3"
+        },
+        {
+            "id": 12,
+            "type": "audio",
+            "title": "The Bargain",
+            "description": "Extended analysis of military exercises, economic leverage points, and US force posture.",
+            "date": "30/03/2026",
+            "source": "/Nexus - Iran - Episode 12.mp3"
+        }
+    ],
+    "future_content": [
+        {
+            "id": 1,
+            "type": "report",
+            "title": "12-Month Projection (Q2 2026 - Q1 2027)",
+            "description": "What to expect over the next 12 months based on current indicators and historical patterns.",
+            "date": "12/04/2026",
+            "source": "/Nexus - Iran - Future.pdf"
+        }
+    ]
+}
