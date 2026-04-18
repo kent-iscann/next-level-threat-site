@@ -5,7 +5,7 @@ export default function FreePodcasts() {
     <section id="podcasts" className="podcasts section">
       <div className="container">
         <div className="podcasts__header">
-          <h2 className="section-title">Open-Source Intelligence</h2>
+          <h2 className="section-title">Open-Source Intel</h2>
           <p className="section-subtitle">Dive into our open-access conversations, historical investigations, and summary briefings.</p>
         </div>
 

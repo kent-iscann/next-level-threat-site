@@ -108,7 +108,7 @@ export default function NLTPlus() {
       <div className="container">
         <div className="plus__header">
           <h2 className="section-title">Signal & Fracture</h2>
-          <p className="section-subtitle">Identifying tomorrow's threats.</p>
+          <p className="section-subtitle">Our proprietary geopolitical early-warning intelligence framework.</p>
         </div>
 
         <div className="plus__teasers">

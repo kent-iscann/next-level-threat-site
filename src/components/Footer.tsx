@@ -12,7 +12,7 @@ export default function Footer() {
   const navLinks = [
     { label: 'Signal & Fracture', href: '#plus' },
     { label: 'Nexus', href: '#nexus' },
-    { label: 'Open-Source Intelligence', href: '#podcasts' },
+    { label: 'Open-Source Intel', href: '#podcasts' },
     { label: 'About', href: '#about' },
   ];
 

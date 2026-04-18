@@ -39,7 +39,7 @@ export default function Header() {
   const navLinks = [
     { label: 'Signal & Fracture', href: '#plus' },
     { label: 'Nexus', href: '#plus' },
-    { label: 'Open-Source Intelligence', href: '#podcasts' },
+    { label: 'Open-Source Intel', href: '#podcasts' },
     { label: 'About', href: '#about' },
   ];
 

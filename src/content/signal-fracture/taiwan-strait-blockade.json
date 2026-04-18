@@ -1,5 +1,6 @@
 {
     "uid": "taiwan-strait-blockade",
+    "publish_date": "15/04/2026",
     "title":"Taiwan Strait Blockade",
     "subtitle":"Real-time monitoring and analysis of the Taiwan Strait security environment. Covering military posturing, diplomatic developments, and economic impacts.",
     "threat_level": "CRITICAL",
@@ -23,15 +24,15 @@
     ],
     "regions": [
         {
-            "id": 1,
+            "id": "taiwan-strait",
             "name": "Taiwan Strait"
         },
         {
-            "id": 2,
+            "id": "east-asia",
             "name": "East Asia"
         },
         {
-            "id": 3,
+            "id": "asia-pacific",
             "name": "Asia-Pacific"
         }
     ],

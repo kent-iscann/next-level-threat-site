@@ -13,7 +13,7 @@ export default function AboutSection() {
             Next Level Threat bridges the gap between scattered open-source intelligence and strategic foresight, empowering individuals and organizations to navigate an increasingly volatile world with clarity and confidence.
           </p>
           <div className="about__footer">
-            <p className="about__group">A flagship intelligence solution by <span className="about__brand">IScann Group</span></p>
+            <p className="about__group">A flagship intelligence solution by <a href="https://iscanngroup.com" target="_blank" className="about__brand">IScann Group</a></p>
           </div>
         </div>
       </div>

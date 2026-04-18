@@ -11,11 +11,11 @@ export default function HeroSection() {
           <span className="accent">Geopolitical Officer.</span>
         </h1>
         <p className="hero__subtitle">
-          AI-enhanced geopolitical intelligence that decodes today's complexities and anticipates tomorrow's critical threats.
+          Next Level Threat decodes today's complexities and anticipates tomorrow's critical threats so you can make better business decisions.
         </p>
         <div className="hero__actions">
           <Link to="/dashboard" className="btn btn-primary">View Demo</Link>
-          <a href="#podcasts" className="btn btn-secondary">Explore Free Intelligence</a>
+          <a href="#podcasts" className="btn btn-secondary">Explore Free Intel</a>
         </div>
       </div>
       <div className="hero__bg"></div>

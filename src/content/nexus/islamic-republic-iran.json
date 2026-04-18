@@ -1,5 +1,6 @@
 {
     "uid": "islamic-republic-iran",
+    "publish_date": "01/04/2026",
     "title":"Islamic Republic of Iran",
     "subtitle":"Analysing the characteristics that make Iran an enduring and difficult adversary.",
     "core_assessment": "The Islamic Republic of Iran remains underestimated by the United States, Israel, and its other adversaries. This is not the Ottoman or Persian empire of the early 20th century. This is a hardened regime strengthened by 40+ years of life under sanctions and war. Nuclear weapons capabilities or not, there should be no expectation that the regime will fall or that the recent war created the conditions for revolution. If anything, the opposite should be assumed. The IRGC remains the dominant force in the country and its power has only increased as a result of the recent strikes.",
@@ -17,7 +18,7 @@
     ],
     "regions": [
         {
-            "id": 1,
+            "id": "middle-east",
             "name": "Middle East"
         }
     ],

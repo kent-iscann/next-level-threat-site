@@ -2,74 +2,6 @@ import './DashboardPage.css';
 import { AlertTriangle, ExternalLink, FileText, Radio, Calendar, Globe, ArrowUpRight, Newspaper, Archive } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const criticalRegions = [
-  { id: 'taiwan-strait', name: 'Taiwan Strait', threatLevel: 'critical', path: '/taiwan-strait', riskScore: 90 },
-  { id: 'sahel', name: 'Sahel', threatLevel: 'critical', path: '/sahel', riskScore: 78 },
-  { id: 'black-sea', name: 'Black Sea', threatLevel: 'critical', path: '/black-sea', riskScore: 85 },
-];
-
-const latestActivity = [
-  {
-    icon: FileText,
-    title: 'Taiwan Strait Blockade',
-    description: 'Analysis of PLA amphibious readiness drills and their impact on semiconductor supply chain risk assessment.',
-    date: '15/04/2026',
-    path: '/signal-fracture/taiwan-strait-blockade',
-    source: 'Signal & Fracture',
-  },
-  {
-    icon: Globe,
-    title: 'Islamic Republic of Iran',
-    description: 'Explaining modern-day Iran through historical excavation.',
-    date: '01/04/2026',
-    path: '/nexus/islamic-republic-iran',
-    source: 'Nexus',
-  },
-];
-
-const verticals = [
-  {
-    icon: FileText,
-    title: 'Signal & Fracture',
-    description: 'Primary intelligence stream with in-depth reports and analysis',
-    items: [
-      { label: 'Taiwan Strait', date: '15/04/2026', path: '/signal-fracture/taiwan-strait-blockade' },
-      { label: 'Sahel', date: '01/04/2026', path: '#' },
-      { label: 'Black Sea', date: '16/03/2026', path: '#' },
-    ],
-  },
-  {
-    icon: Globe,
-    title: 'Nexus',
-    description: 'Cross-domain connections and systemic risk mapping',
-    items: [
-      { label: 'Islamic Republic of Iran', date: '01/04/2026', path: '/nexus/islamic-republic-iran' },
-      { label: 'Venezuela', date: '28/03/2026', path: '#' },
-      { label: 'Israel', date: '14/03/2026', path: '#' },
-    ],
-  },
-  {
-    icon: Calendar,
-    title: 'Weekly Briefings',
-    description: 'Summarized key developments from the past week',
-    items: [
-      { label: 'Taiwan Strait', date: '17/04/2026', path: '#' },
-      { label: 'Sahel', date: '10/04/2026', path: '#' },
-      { label: 'Black Sea', date: '03/04/2026', path: '#' },
-    ],
-  },
-  {
-    icon: Radio,
-    title: 'Quarterly Updates',
-    description: 'Comprehensive strategic reviews each quarter',
-    items: [
-      { label: 'Q1 2026', date: '31/03/2026', path: '#' },
-      { label: 'Q4 2025', date: '31/12/2025', path: '#' },
-      { label: 'Q3 2025', date: '30/09/2025', path: '#' },
-    ],
-  },
-];
-
 function RiskGauge({ score }: { score: number }) {
   const getColor = (s: number) => {
     if (s >= 85) return '#ef4444';
@@ -103,6 +35,101 @@ function RiskGauge({ score }: { score: number }) {
 }
 
 export default function DashboardPage() {
+
+  const regionModules = import.meta.glob('/src/content/regions/*.json', {eager: true });
+  
+  const regions = Object.entries(regionModules)
+    .map(([key, module]) => {
+      const json = module.default;
+      if (json.threat_level !== 'CRITICAL') return null;
+
+      const slug = key.split('/').pop()?.replace('.json', '') ?? '';
+      return {
+        id: slug,
+        name: json.title || slug,
+        threatLevel: json.threat_level.toLowerCase(),
+        path: json.uid ? `/${json.uid}` : `/${slug}`,
+        riskScore: json.risk_score ?? 0,
+        uid: json.uid || `/${slug}`,
+      };
+    })
+    .filter((region): region is NonNullable<typeof region> => region !== null)
+    .sort((a, b) => b.riskScore - a.riskScore);
+
+  // Load all JSON files from the content directories
+  const signalFractureModules = import.meta.glob('/src/content/signal-fracture/*.json', { eager: true });
+  const nexusModules = import.meta.glob('/src/content/nexus/*.json', { eager: true });
+
+  const getActivityItems = (modules, sourceName, iconComponent) => {
+    return Object.entries(modules).map(([key, module]) => {
+      const json = module.default;
+      const pathParts = key.split('/');
+      const fileName = pathParts[pathParts.length - 1];
+      const slug = fileName.replace('.json', '');
+      
+      return {
+        icon: iconComponent,
+        title: json.title || '',
+        description: json.subtitle || '',
+        date: json.publish_date,
+        path: `/${sourceName.toLowerCase().replace(' & ', '-')}/${slug}`,
+        source: json.source || sourceName // Use JSON source if available, else fallback to directory name
+      };
+    });
+  };
+
+  const signalFractureItems = getActivityItems(signalFractureModules, 'Signal & Fracture', FileText);
+  const nexusItems = getActivityItems(nexusModules, 'Nexus', Globe);
+
+  const allItems = [...signalFractureItems, ...nexusItems];
+  const sortedItems = allItems.sort((a, b) => {
+    const dateA = a.date.split('/').reverse().join('-');
+    const dateB = b.date.split('/').reverse().join('-');
+    return new Date(dateB) - new Date(dateA); // Descending
+  });
+  const latestActivity = sortedItems.slice(0, 2);
+
+  const verticals = [
+    {
+      icon: FileText,
+      title: 'Signal & Fracture',
+      description: 'Primary intelligence stream with in-depth reports and analysis',
+      items: signalFractureItems
+        .map(item => ({ label: item.title, date: item.date, path: item.path }))
+        .sort((a, b) => new Date(b.date.split('/').reverse().join('-')) - new Date(a.date.split('/').reverse().join('-')))
+        .slice(0, 5),
+    },
+    {
+      icon: Globe,
+      title: 'Nexus',
+      description: 'Cross-domain connections and systemic risk mapping',
+      items: nexusItems
+        .map(item => ({ label: item.title, date: item.date, path: item.path }))
+        .sort((a, b) => new Date(b.date.split('/').reverse().join('-')) - new Date(a.date.split('/').reverse().join('-')))
+        .slice(0, 5),
+    },
+    {
+      icon: Calendar,
+      title: 'Weekly Briefings',
+      description: 'Summarized key developments from the past week',
+      items: [
+        { label: 'Taiwan Strait', date: '17/04/2026', path: '#' },
+        { label: 'Sahel', date: '10/04/2026', path: '#' },
+        { label: 'Black Sea', date: '03/04/2026', path: '#' },
+      ],
+    },
+    {
+      icon: Radio,
+      title: 'Quarterly Updates',
+      description: 'Comprehensive strategic reviews each quarter',
+      items: [
+        { label: 'Q1 2026', date: '31/03/2026', path: '#' },
+        { label: 'Q4 2025', date: '31/12/2025', path: '#' },
+        { label: 'Q3 2025', date: '30/09/2025', path: '#' },
+      ],
+    },
+  ];
+
   return (
     <div className="container">
       <div className="dashboard-page">
@@ -118,10 +145,10 @@ export default function DashboardPage() {
         <section className="dash-regions-section">
           <div className="dash-regions-header">
             <AlertTriangle className="dash-regions-icon" />
-            <h2>Threat Regions</h2>
+            <h2>Critical Threat Regions</h2>
           </div>
           <div className="dash-regions-grid">
-            {criticalRegions.map(region => (
+            {regions.map(region => (
               <div key={region.id} className={`region-card ${region.threatLevel}`}>
                 <div className="region-card__pulse" />
                 <div className="region-card__content">
@@ -133,8 +160,8 @@ export default function DashboardPage() {
                     <RiskGauge score={region.riskScore} />
                   </div>
                   <h3 className="region-card__name">{region.name}</h3>
-                  {region.path && region.path !== '#' ? (
-                    <Link to={region.path} className="region-card__link">
+                  {region.uid && region.uid !== '#' ? (
+                    <Link to={region.uid} className="region-card__link">
                       Enter Theatre <ExternalLink className="region-card__link-icon" />
                     </Link>
                   ) : (
@@ -149,7 +176,7 @@ export default function DashboardPage() {
         <section className="dash-latest-section">
           <div className="dash-latest-header">
             <Newspaper className="dash-latest-header-icon" />
-            <h2>Latest Intelligence</h2>
+            <h2>Latest Intel</h2>
             {/* <a href="#" className="dash-latest-view-all">View all <ArrowUpRight className="dash-latest-arrow" /></a> */}
           </div>
           <div className="dash-latest-feed">
