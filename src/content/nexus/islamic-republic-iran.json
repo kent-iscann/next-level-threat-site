@@ -29,7 +29,7 @@
             "title": "Persia",
             "description": "Before the Republic, before Islam's arrival, before the foreign powers — there was Persia.",
             "date": "12/04/2026",
-            "source": "/Nexus - Iran - Episode 1.mp3"
+            "source": "https://pub-3eb636b117b54ee1a35be8e9928efa71.r2.dev/nexus/iran/Nexus%20-%20Iran%20-%20Episode%201.mp3"
         },
         {
             "id": 2,
@@ -127,7 +127,7 @@
             "title": "12-Month Projection (Q2 2026 - Q1 2027)",
             "description": "What to expect over the next 12 months based on current indicators and historical patterns.",
             "date": "12/04/2026",
-            "source": "/Nexus - Iran - Future.pdf"
+            "source": "https://pub-3eb636b117b54ee1a35be8e9928efa71.r2.dev/nexus/iran/Nexus%20-%20Iran%20-%20Future.pdf"
         }
     ]
 }
