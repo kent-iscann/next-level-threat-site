@@ -2,8 +2,8 @@ import './Nexus.css';
 
 const benefitItems = [
   {
-    title: 'OSINT Foundation',
-    desc: 'Machine learning models trained on decades of geopolitical data to surface hidden patterns.',
+    title: 'Audio Series',
+    desc: 'In-depth country analysis delivered as engaging audio episodes.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <path d="M12 2a4 4 0 0 1 4 4c0 1.1-.9 2-2 2h-4a2 2 0 0 1-2-2 4 4 0 0 1 4-4z" />
@@ -14,8 +14,8 @@ const benefitItems = [
     ),
   },
   {
-    title: 'Expert Analysis',
-    desc: 'Deep-dive historical excavation that maps past precedents to modern crises.',
+    title: 'Future Analysis',
+    desc: 'Projection of future scenarios based on historical patterns and current indicators.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <circle cx="12" cy="12" r="9" />
@@ -25,23 +25,14 @@ const benefitItems = [
     ),
   },
   {
-    title: 'Forward Looking',
-    desc: 'Rigorous OSINT methodologies applied to publicly available documents and signals.',
+    title: 'Intelligence Briefs',
+    desc: 'Timely updates and analysis on the countries covered by Nexus.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <circle cx="11" cy="11" r="7" />
         <line x1="16.5" y1="16.5" x2="21" y2="21" />
         <line x1="8" y1="11" x2="14" y2="11" />
         <line x1="11" y1="8" x2="11" y2="14" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Actionable Intel',
-    desc: 'Clear, pragmatic intelligence designed to inform strategy and mitigate risk.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
-        <polygon points="3 11 22 2 13 21 11 13 3 11" />
       </svg>
     ),
   },
@@ -54,30 +45,30 @@ export default function NLTPlus() {
       <div className="container">
         <div className="nexus__header">
           <h2 className="section-title">Nexus</h2>
-          <p className="section-subtitle">Explaining today's geopolitical realities through historical excavation.</p>
+          <p className="section-subtitle">Our proprietary OSINT framework. We explain today's geopolitical realities and future possibilities through deep historical excavation.</p>
         </div>
 
         <div className="nexus__teasers">
           <div className="card tease-card">
-            <div className="tease-card__badge">Audio Series</div>
-            <h3 className="tease-card__title">Country Analysis</h3>
-            <p className="tease-card__desc">Understand the complexities of the countries at the center of geopolitics.</p>
-            <div className="tease-card__player">
+            <div className="tease-card__badge">Country Analysis</div>
+            <h3 className="tease-card__title">The Full Story</h3>
+            <p className="tease-card__desc">We help you understand the nuanced complexities of the countries at the center of geopolitics. What makes them tick, why their current actions can be explained by history, and what the future might hold.</p>
+            {/* <div className="tease-card__player">
               <div className="placeholder-embed">
                 <audio controls>
                   <source src="Nexus - Iran - Episode 1.mp3" type="audio/mpeg" />
                   Your browser does not support the audio tag.
                 </audio>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="card tease-card tease-card--signal">
-            <div className="tease-card__badge">Actionable Insights</div>
-            <h3 className="tease-card__title">Future Outlook</h3>
-            <p className="tease-card__desc">Projecting the future based on historical excavation.</p>
-            <div className="tease-card__player">
+            <div className="tease-card__badge">Future Outlook</div>
+            <h3 className="tease-card__title">Actionable Insights</h3>
+            <p className="tease-card__desc">We use our knowledge of historical patterns to identify likely future behaviors and outcomes.</p>
+            {/* <div className="tease-card__player">
               <div className="placeholder-embed">PDF Report (Coming Soon)</div>
-            </div>
+            </div> */}
           </div>
         </div>
 

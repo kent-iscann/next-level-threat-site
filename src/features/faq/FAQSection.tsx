@@ -3,33 +3,33 @@ import './FAQSection.css';
 
 const faqItems = [
   {
-    question: 'What is OSINT?',
+    question: 'What is Next Level Threat?',
     answer:
-      'OSINT stands for Open-Source Intelligence. It refers to the collection and analysis of information from publicly available sources — government reports, satellite imagery, social media, commercial databases, academic research — to produce actionable intelligence.',
+      'Next Level Threat is a subscription service that delivers forward-looking geopolitical intelligence. Its flagship solution, Signal & Fracture, is a structured early-warning framework that helps clients act before risk becomes crisis',
   },
   {
     question: 'Is there a free trial?',
-    answer: 'Placeholder — we are currently evaluating our free trial policy. Stay tuned for updates.',
+    answer: 'We have a demo version available for public viewing, which includes access to a selection of content.',
   },
   {
     question: 'Can I cancel my subscription anytime?',
     answer:
-      'Placeholder — details of the cancellation policy will be finalised before launch. Expect a straightforward, no-hassle process.',
+      'Yes, absolutely. We offer flexible subscription plans with no long-term commitments. You can cancel your subscription at any time through your account settings or by contacting our support team.',
   },
   {
-    question: 'How is Next Level Threat different from reading mainstream news?',
+    question: 'How is Next Level Threat different from traditional geopolitical intelligence consultancies?',
     answer:
-      'Headline news tells you what happened today. Threat+ examines the historical, structural, and informational forces that made it inevitable. Our analysis draws on decades of precedent, multi-source OSINT methodology, and AI-assisted pattern detection across open data — far beyond the daily cycle.',
+      'Next Level Threat provides institutional-quality geopolitical intelligence, delivered in subscription and bespoke formats, at a price point below traditional consultancies',
   },
   {
     question: 'Who produces the content?',
     answer:
-      'Threat+ is a flagship product of IScann Group, a geopolitical intelligence consultancy with deep expertise in Sahel-region security, OSINT verification, and historical analysis. All content is produced in-house.',
+      'Next Level Threat is a flagship solution by IScann Group, a geopolitical intelligence consultancy with deep expertise in geopolitical risk analysis and OSINT investigation. All content is produced in-house.',
   },
   {
     question: 'What format does Signal & Fracture take?',
     answer:
-      'Placeholder — Signal & Fracture will be delivered as a detailed intelligence briefing (PDF and/or audio). Format details will be confirmed at launch.',
+      'We offer a variety of formats, including full report and overview PDFs, as well as audio overviews and deep-dives. Our content is available via the subscriber dashboard and delivered by email.',
   },
 ];
 
@@ -43,8 +43,8 @@ export default function FAQSection() {
           <h2 className="section-title">Frequently Asked Questions</h2>
           <p className="section-subtitle">
             Everything you need to know before subscribing. Can't find your answer? Reach out to us at{' '}
-            <a href="mailto:placeholder@example.com" className="faq__link">
-              placeholder@example.com
+            <a href="mailto:nlt@iscanngroup.com" className="faq__link">
+              nlt@iscanngroup.com
             </a>
             .
           </p>

@@ -96,7 +96,7 @@ export default function SignalFractureSlugPage() {
        return <div>Data not found for {slug}</div>;
      }
 
-    const data = jsonModule.default;
+    const data = (jsonModule as any).default;
 
 
     return (
@@ -132,7 +132,7 @@ export default function SignalFractureSlugPage() {
               <h2>Key Actors</h2>
             </div>
             <div className="strait-actors-grid">
-              {data.key_actors.map(actor => (
+              {data.key_actors.map((actor: any) => (
                 <div key={actor.id} className="strait-actor-card">
                   <h3>{actor.name}</h3>
                   <p><strong>Strategic stake:</strong> {actor.stake}</p>
@@ -148,7 +148,7 @@ export default function SignalFractureSlugPage() {
               {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
             </div>
             <div className="strait-content-grid">
-              {data.risk_content.map(item => (
+              {data.risk_content.map((item: any) => (
                 <ContentCard key={item.id} item={item} />
               ))}
             </div>
@@ -161,7 +161,7 @@ export default function SignalFractureSlugPage() {
               {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
             </div>
             <div className="strait-content-grid">
-              {data.scenario_content.map(item => (
+              {data.scenario_content.map((item: any) => (
                 <ContentCard key={item.id} item={item} />
               ))}
             </div>

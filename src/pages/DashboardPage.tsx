@@ -40,7 +40,7 @@ export default function DashboardPage() {
   
   const regions = Object.entries(regionModules)
     .map(([key, module]) => {
-      const json = module.default;
+      const json = (module as any).default;
       if (json.threat_level !== 'CRITICAL') return null;
 
       const slug = key.split('/').pop()?.replace('.json', '') ?? '';
@@ -60,9 +60,9 @@ export default function DashboardPage() {
   const signalFractureModules = import.meta.glob('/src/content/signal-fracture/*.json', { eager: true });
   const nexusModules = import.meta.glob('/src/content/nexus/*.json', { eager: true });
 
-  const getActivityItems = (modules, sourceName, iconComponent) => {
+  const getActivityItems = (modules: any, sourceName: string, iconComponent: any) => {
     return Object.entries(modules).map(([key, module]) => {
-      const json = module.default;
+      const json = (module as any).default;
       const pathParts = key.split('/');
       const fileName = pathParts[pathParts.length - 1];
       const slug = fileName.replace('.json', '');
@@ -85,7 +85,7 @@ export default function DashboardPage() {
   const sortedItems = allItems.sort((a, b) => {
     const dateA = a.date.split('/').reverse().join('-');
     const dateB = b.date.split('/').reverse().join('-');
-    return new Date(dateB) - new Date(dateA); // Descending
+    return new Date(dateB).getTime() - new Date(dateA).getTime(); // Descending
   });
   const latestActivity = sortedItems.slice(0, 2);
 
@@ -96,7 +96,7 @@ export default function DashboardPage() {
       description: 'Primary intelligence stream with in-depth reports and analysis',
       items: signalFractureItems
         .map(item => ({ label: item.title, date: item.date, path: item.path }))
-        .sort((a, b) => new Date(b.date.split('/').reverse().join('-')) - new Date(a.date.split('/').reverse().join('-')))
+        .sort((a, b) => new Date(b.date.split('/').reverse().join('-')).getTime() - new Date(a.date.split('/').reverse().join('-')).getTime())
         .slice(0, 5),
     },
     {
@@ -105,12 +105,12 @@ export default function DashboardPage() {
       description: 'Cross-domain connections and systemic risk mapping',
       items: nexusItems
         .map(item => ({ label: item.title, date: item.date, path: item.path }))
-        .sort((a, b) => new Date(b.date.split('/').reverse().join('-')) - new Date(a.date.split('/').reverse().join('-')))
+        .sort((a, b) => new Date(b.date.split('/').reverse().join('-')).getTime() - new Date(a.date.split('/').reverse().join('-')).getTime())
         .slice(0, 5),
     },
     {
       icon: Calendar,
-      title: 'Weekly Briefings',
+      title: 'Briefings',
       description: 'Summarized key developments from the past week',
       items: [
         { label: 'Taiwan Strait', date: '17/04/2026', path: '#' },

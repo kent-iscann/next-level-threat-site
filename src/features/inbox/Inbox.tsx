@@ -3,7 +3,7 @@ import './Inbox.css';
 const offerItems = [
   {
     title: 'Signal & Fracture',
-    desc: 'Risk assessments and analysis.',
+    desc: 'Structured reports and overviews in both text and audio formats.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -15,7 +15,7 @@ const offerItems = [
   },
   {
     title: 'Nexus',
-    desc: 'Podcast episodes, ad free.',
+    desc: 'Audio series and future outlook PDFs.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
@@ -23,8 +23,8 @@ const offerItems = [
     ),
   },
   {
-    title: 'Weekly Briefings',
-    desc: 'Intelligence updates from our team of experts.',
+    title: 'Briefings',
+    desc: 'Daily and weekly email updates.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -37,7 +37,7 @@ const offerItems = [
   },
   {
     title: 'Quarterly Updates',
-    desc: 'Recap of the most important developments and things to watch.',
+    desc: 'A newsletter and dedicated dashboard page.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -52,7 +52,7 @@ export default function SocialProof() {
     <section id="social-proof" className="social-proof section">
       <div className="container">
         <div className="audience__header">
-          <h2 className="section-title">Delivered to Your Inbox,<br />Available On-Demand</h2>
+          <h2 className="section-title">Delivered to Your Inbox<br />and Available On-Demand</h2>
           <p className="section-subtitle">
             Our intelligence the way you want it.
           </p>

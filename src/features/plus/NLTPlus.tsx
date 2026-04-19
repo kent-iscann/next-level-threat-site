@@ -2,8 +2,8 @@ import './NLTPlus.css';
 
 const benefitItems = [
   {
-    title: 'Proprietary Framework',
-    desc: 'Machine learning models trained on decades of geopolitical data to surface hidden patterns.',
+    title: 'Structured Reports',
+    desc: 'Risk assessments and scenario planning delivered in clear, concise formats for easy consumption at all levels of an organization.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <path d="M12 2a4 4 0 0 1 4 4c0 1.1-.9 2-2 2h-4a2 2 0 0 1-2-2 4 4 0 0 1 4-4z" />
@@ -14,8 +14,8 @@ const benefitItems = [
     ),
   },
   {
-    title: 'Expert Analysis',
-    desc: 'Deep-dive historical excavation that maps past precedents to modern crises.',
+    title: 'Intelligence Briefs',
+    desc: 'Daily, weekly, and quarterly briefings on key areas of risk.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <circle cx="12" cy="12" r="9" />
@@ -25,8 +25,8 @@ const benefitItems = [
     ),
   },
   {
-    title: 'Forward Looking',
-    desc: 'Rigorous OSINT methodologies applied to publicly available documents and signals.',
+    title: 'Threshold Alerts',
+    desc: 'A notification system that triggers when specific indicators cross predefined thresholds.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <circle cx="11" cy="11" r="7" />
@@ -37,8 +37,8 @@ const benefitItems = [
     ),
   },
   {
-    title: 'Actionable Intel',
-    desc: 'Clear, pragmatic intelligence designed to inform strategy and mitigate risk.',
+    title: 'Bespoke Analysis',
+    desc: 'Tailored reports addressing an organization\'s specific exposure and decision requirements.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">
         <polygon points="3 11 22 2 13 21 11 13 3 11" />
@@ -108,25 +108,25 @@ export default function NLTPlus() {
       <div className="container">
         <div className="plus__header">
           <h2 className="section-title">Signal & Fracture</h2>
-          <p className="section-subtitle">Our proprietary geopolitical early-warning intelligence framework.</p>
+          <p className="section-subtitle">Our proprietary geopolitical early-warning intelligence framework. We monitor political, economic, social, technological, and environmental indicators to identify where instability is building, how fast it is moving, and which fracture scenarios are becoming more likely.</p>
         </div>
 
         <div className="plus__teasers">
           <div className="card tease-card">
-            <div className="tease-card__badge">Intelligence Brief</div>
-            <h3 className="tease-card__title">Risk Assessment</h3>
-            <p className="tease-card__desc">Our proprietary risk analysis of geopolitical flashpoints.</p>
-            <div className="tease-card__player">
+            <div className="tease-card__badge">Risk Assessment</div>
+            <h3 className="tease-card__title">Proactive Risk Management</h3>
+            <p className="tease-card__desc">Rather than reacting to risk after the decision window has closed, Signal & Fracture identifies the convergence of weak signals across multiple domains and translates them into probability-weighted scenarios, timing assessments, and practical decision guidance.</p>
+            {/* <div className="tease-card__player">
               <div className="placeholder-embed">Spotify Embed (Coming Soon)</div>
-            </div>
+            </div> */}
           </div>
           <div className="card tease-card tease-card--signal">
-            <div className="tease-card__badge">Actionable Insights</div>
-            <h3 className="tease-card__title">Scenario Planning</h3>
-            <p className="tease-card__desc">Be prepared for future geopolitical developments.</p>
-            <div className="tease-card__player">
+            <div className="tease-card__badge">Scenario Planning</div>
+            <h3 className="tease-card__title">Actionable Insights</h3>
+            <p className="tease-card__desc">We deliver actionable intelligence on where fractures are emerging, how quickly they may move, and what those developments could mean for assets, operations, supply chains, counterparties, and strategic planning.</p>
+            {/* <div className="tease-card__player">
               <div className="placeholder-embed">PDF Report (Coming Soon)</div>
-            </div>
+            </div> */}
           </div>
         </div>
 

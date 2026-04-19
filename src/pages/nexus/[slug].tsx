@@ -56,7 +56,7 @@ export default function NexusSlugPage() {
        return <div>Data not found for {slug}</div>;
      }
 
-    const data = jsonModule.default;
+    const data = (jsonModule as any).default;
 
   return (
     <div className="container">
@@ -89,7 +89,7 @@ export default function NexusSlugPage() {
             <h2>Historical Excavation</h2>
           </div>
           <div className="strait-content-grid">
-            {data.excavation_content.map(item => (
+            {data.excavation_content.map((item: any) => (
               <ContentCard key={item.id} item={item} />
             ))}
           </div>
@@ -101,7 +101,7 @@ export default function NexusSlugPage() {
             <h2>Future Outlook</h2>
           </div>
           <div className="strait-content-grid">
-            {data.future_content.map(item => (
+            {data.future_content.map((item: any) => (
               <ContentCard key={item.id} item={item} />
             ))}
           </div>

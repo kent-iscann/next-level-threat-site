@@ -48,6 +48,7 @@ export default function Header() {
       <div className="container header__inner">
           <div className="logo">
             <Link to="/"><img src="/images/nlt_logo.png" alt="Next Level Threat Logo" /></Link>
+            <span>Next Level Threat</span>
           </div>
 
         <button className="header__toggle" aria-label="Toggle menu" aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>

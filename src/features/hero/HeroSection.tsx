@@ -11,7 +11,7 @@ export default function HeroSection() {
           <span className="accent">Geopolitical Officer.</span>
         </h1>
         <p className="hero__subtitle">
-          Next Level Threat decodes today's complexities and anticipates tomorrow's critical threats so you can make better business decisions.
+          Next Level Threat decodes today's complexities and anticipates tomorrow's critical threats so you can act before risk becomes crisis.
         </p>
         <div className="hero__actions">
           <Link to="/dashboard" className="btn btn-primary">View Demo</Link>

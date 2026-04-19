@@ -10,18 +10,18 @@ const stats = [
 const testimonials = [
   {
     quote: '"Next Level Threat quickly became an indispensible part of our workflow. We have a much better understanding of the regions we deal with and can provide our own clients with a better service."',
-    name: 'John, CEO',
-    org: 'Think Tank',
+    name: 'John, Managing Partner',
+    org: 'Private Equity Firm',
   },
   {
     quote: '"Truth be told, we had not considered a Chief Geopolitical Officer before subscribing to Next Level Threat. Now we can\'t imagine life without one. There\'s really no alternative to being prepared."',
-    name: 'Jane, COO',
-    org: 'Investment Fund',
+    name: 'Jane, Chief Risk Officer',
+    org: 'Multinational Corporation',
   },
   {
     quote: '"What amazes me about Next Level Threat is their ability to identify geopolitical hotspots that are not on anyone\'s radar. And when something big does break, the analysis they put together is top notch."',
-    name: 'Jack, Founder',
-    org: 'New Media Company',
+    name: 'Jack, Partner',
+    org: 'Hedge Fund',
   },
 ];
 
