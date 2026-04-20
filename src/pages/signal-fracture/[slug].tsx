@@ -1,5 +1,5 @@
 import './SignalFracture.css';
-import { ArrowLeft, FileText, Presentation, Headphones, ArrowUpRight, Users, Target, MapPin, Newspaper } from 'lucide-react';
+import { ArrowLeft, FileText, Presentation, Headphones, ArrowUpRight, Users, Target, Newspaper } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 
 function RiskGauge({ score }: { score: number }) {
