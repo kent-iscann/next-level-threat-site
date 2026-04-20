@@ -2,7 +2,7 @@
     "uid": "taiwan-strait-blockade",
     "publish_date": "15/04/2026",
     "title":"Taiwan Strait Blockade",
-    "subtitle":"Real-time monitoring and analysis of the Taiwan Strait security environment. Covering military posturing, diplomatic developments, and economic impacts.",
+    "subtitle":"Analysis of the risks and scenarios associated with a potential Chinese blockade of the Taiwan Strait.",
     "threat_level": "CRITICAL",
     "scores": {
             "composite_risk": 90,
@@ -58,30 +58,30 @@
             "stake": "US alliance obligations; geographic exposure to blockade."
         }   
     ],
-    "risk_content": [
+    "content": [
         {
             "id": 1,
             "type": "report",
-            "title": "Full Report",
+            "title": "Executive Overview",
+            "description": "Summary of recent diplomatic movements and their implications for regional stability.",
+            "date": "08/04/2026",
+            "source": "https://pub-3eb636b117b54ee1a35be8e9928efa71.r2.dev/signal-fracture/taiwan-strait-blockade/SF%20-%20Taiwan%20-%20Risk%20-%20Overview.pdf"
+        },
+        {
+            "id": 2,
+            "type": "report",
+            "title": "Full Assessment",
             "description": "Comprehensive analysis of PLA amphibious readiness drills and semiconductor supply chain risk.",
             "date": "12/04/2026",
             "source": "https://pub-3eb636b117b54ee1a35be8e9928efa71.r2.dev/signal-fracture/taiwan-strait-blockade/SF%20-%20Taiwan%20-%20Risk%20-%20Report.pdf"
         },
         {
-            "id": 2,
+            "id": 3,
             "type": "audio",
             "title": "5-Minute Overview",
             "description": "Quick briefing on the current threat posture and key indicators to watch.",
             "date": "13/04/2026",
             "source": "https://pub-3eb636b117b54ee1a35be8e9928efa71.r2.dev/signal-fracture/taiwan-strait-blockade/SF%20-%20Taiwan%20-%20Risk%20-%20Short%20Audio.mp3"
-        },
-        {
-            "id": 3,
-            "type": "report",
-            "title": "Overview",
-            "description": "Summary of recent diplomatic movements and their implications for regional stability.",
-            "date": "08/04/2026",
-            "source": "https://pub-3eb636b117b54ee1a35be8e9928efa71.r2.dev/signal-fracture/taiwan-strait-blockade/SF%20-%20Taiwan%20-%20Risk%20-%20Overview.pdf"
         },
         {
             "id": 4,
@@ -90,32 +90,14 @@
             "description": "Extended analysis of military exercises, economic leverage points, and US force posture.",
             "date": "30/03/2026",
             "source": "https://pub-3eb636b117b54ee1a35be8e9928efa71.r2.dev/signal-fracture/taiwan-strait-blockade/SF%20-%20Taiwan%20-%20Risk%20-%20Long%20Audio.mp3"
-        }
-    ],
-    "scenario_content": [
+        },
         {
-            "id": 1,
+            "id": 5,
             "type": "report",
-            "title": "Full Report",
-            "description": "Comprehensive analysis of PLA amphibious readiness drills and semiconductor supply chain risk.",
+            "title": "Scenario Planning for Decision-Makers",
+            "description": "Five scenarios. Every pathway developed. Every consequence mapped. Every decision identified.",
             "date": "12/04/2026",
             "source": "https://pub-3eb636b117b54ee1a35be8e9928efa71.r2.dev/signal-fracture/taiwan-strait-blockade/SF%20-%20Taiwan%20-%20Scenario%20-%20Report.pdf"
-        },
-        {
-            "id": 6,
-            "type": "audio",
-            "title": "10-Minute Overview",
-            "description": "Audio summary of the most likely escalation pathways and their economic impact.",
-            "date": "11/04/2026",
-            "source": ""
-        },
-        {
-            "id": 4,
-            "type": "report",
-            "title": "Overview",
-            "description": "Visual breakdown of diplomatic off-ramps, escalation triggers, and stakeholder positions.",
-            "date": "06/04/2026",
-            "source": ""
         }
     ]
 }

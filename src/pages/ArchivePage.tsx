@@ -40,7 +40,7 @@ function loadArchiveEntries(): ArchiveEntry[] {
       // Collect all content arrays from the JSON
       const content: ContentItem[] = [];
       Object.keys(json).forEach((k) => {
-        if (Array.isArray(json[k]) && k.endsWith('_content')) {
+        if (Array.isArray(json[k]) && k.endsWith('content')) {
           content.push(...json[k]);
         }
       });
@@ -96,7 +96,7 @@ function ContentCard({ item }: { item: ContentItem }) {
           <span className="archive-content-card__date">{item.date}</span>
         </div>
         <h3>{item.title}</h3>
-        <p>{item.description}</p>
+        {/* <p>{item.description}</p> */}
       </div>
       <div className="archive-content-card__action">
         {item.type === 'presentation' || item.type === 'report' ? (
@@ -216,29 +216,29 @@ function ArchiveRow({
           </Link>
           <span className={`archive-table__type-badge ${typeClass}`}>{typeLabel}</span>
         </td>
-        <td className="archive-table__cell archive-table__cell--desc" title={entry.description}>
+        {/* <td className="archive-table__cell archive-table__cell--desc" title={entry.description}>
           {entry.description.length > 80
             ? `${entry.description.slice(0, 80)}…`
             : entry.description}
-        </td>
+        </td> */}
         <td className="archive-table__cell">
           {entry.regionNames.map((r) => (
             <span key={r} className="archive-table__tag">{r}</span>
           ))}
         </td>
         <td className="archive-table__cell archive-table__cell--date">{entry.publishDate}</td>
-        <td className="archive-table__cell">
+        {/* <td className="archive-table__cell">
           {entry.categories.map((c) => (
             <span key={c} className="archive-table__tag">{c}</span>
           ))}
-        </td>
-        <td className="archive-table__cell">
+        </td> */}
+        {/* <td className="archive-table__cell">
           {entry.tags.map((t) => (
             <span key={t} className="archive-table__tag">{t}</span>
           ))}
-        </td>
+        </td> */}
         <td className="archive-table__cell archive-table__cell--expand">
-          {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+          {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
         </td>
       </tr>
       {expanded && (
@@ -246,21 +246,26 @@ function ArchiveRow({
           <td colSpan={7}>
             <div className="archive-expanded-content">
               <div className="archive-expanded__header">
-                <h3>{entry.title}</h3>
+                {/* <h3>{entry.title}</h3> */}
+                <p>
+                  {entry.tags.map((t) => (
+                    <span key={t} className="archive-table__tag">{t}</span>
+                  ))}
+                </p>
                 <p className="archive-expanded__full-desc">{entry.description}</p>
-                <div className="archive-expanded__meta">
+                {/* <div className="archive-expanded__meta">
                   <span className={`archive-type-badge ${typeClass}`}>{typeLabel}</span>
                   <span>Published: {entry.publishDate}</span>
                   <span>Regions: {entry.regionNames.join(', ')}</span>
                   <span>Categories: {entry.categories.join(', ')}</span>
                   <span>Tags: {entry.tags.join(', ')}</span>
-                </div>
+                </div> */}
                 <Link to={`/${entry.type}/${entry.slug}`} className="archive-expanded__view-link">
                   View Full Analysis <ArrowUpRight size={14} />
                 </Link>
               </div>
               <div className="archive-content-section">
-                <h4>Associated Content ({entry.content.length})</h4>
+                <h4>Content ({entry.content.length})</h4>
                 {entry.content.length > 0 ? (
                   <div className="archive-expanded__content-grid">
                     {entry.content.map((item) => (
@@ -410,7 +415,7 @@ export default function ArchivePage() {
 
         <header className="archive-header">
           <h1>Intelligence Archive</h1>
-          <p>Complete catalogue of all Signal & Fracture and Nexus entries.</p>
+          <p>A complete catalog of our content.</p>
         </header>
 
         {/* ─── Controls ─── */}
@@ -483,11 +488,11 @@ export default function ArchivePage() {
               <thead>
                 <tr>
                   <th className="archive-table__head">Title</th>
-                  <th className="archive-table__head">Description</th>
+                  {/* <th className="archive-table__head">Description</th> */}
                   <th className="archive-table__head">Region(s)</th>
                   <th className="archive-table__head">Published</th>
-                  <th className="archive-table__head">Categories</th>
-                  <th className="archive-table__head">Tags</th>
+                  {/* <th className="archive-table__head">Categories</th> */}
+                  {/* <th className="archive-table__head">Tags</th> */}
                   <th className="archive-table__head archive-table__head--expand"></th>
                 </tr>
               </thead>

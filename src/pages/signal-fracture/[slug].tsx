@@ -2,9 +2,6 @@ import './SignalFracture.css';
 import { ArrowLeft, FileText, Presentation, Headphones, ArrowUpRight, Users, Target, MapPin, Newspaper } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 
-
-
-
 function RiskGauge({ score }: { score: number }) {
   const getColor = (s: number) => {
     if (s >= 85) return '#ef4444';
@@ -144,28 +141,28 @@ export default function SignalFractureSlugPage() {
           <section className="strait-content-section">
             <div className="strait-subheader">
               <Newspaper className="strait-icon" />
-              <h2>Risk Assessment</h2>
+              <h2>Content</h2>
               {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
             </div>
             <div className="strait-content-grid">
-              {data.risk_content.map((item: any) => (
+              {data.content.map((item: any) => (
                 <ContentCard key={item.id} item={item} />
               ))}
             </div>
           </section>
 
-          <section className="strait-content-section">
+          {/* <section className="strait-content-section">
             <div className="strait-subheader">
               <MapPin className="strait-icon" />
               <h2>Scenario Planning</h2>
-              {/* <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a> */}
+              <a href="#" className="strait-content-view-all">View all <ArrowUpRight className="strait-content-view-icon" /></a>
             </div>
             <div className="strait-content-grid">
               {data.scenario_content.map((item: any) => (
                 <ContentCard key={item.id} item={item} />
               ))}
             </div>
-          </section>
+          </section> */}
 
         </div>
       </div>

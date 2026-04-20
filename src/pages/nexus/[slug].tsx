@@ -1,5 +1,5 @@
 import './NexusPage.css';
-import { ArrowLeft, FileText, Presentation, Headphones, ArrowUpRight, Target, Shovel, Binoculars } from 'lucide-react';
+import { ArrowLeft, FileText, Presentation, Headphones, ArrowUpRight, Target, Newspaper } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 
 function ContentIcon({ type }: { type: string }) {
@@ -85,17 +85,17 @@ export default function NexusSlugPage() {
 
         <section className="strait-content-section">
           <div className="strait-subheader">
-            <Shovel className="strait-icon" />
-            <h2>Historical Excavation</h2>
+            <Newspaper className="strait-icon" />
+            <h2>Content</h2>
           </div>
           <div className="strait-content-grid">
-            {data.excavation_content.map((item: any) => (
+            {data.content.map((item: any) => (
               <ContentCard key={item.id} item={item} />
             ))}
           </div>
         </section>
 
-        <section className="strait-content-section">
+        {/* <section className="strait-content-section">
           <div className="strait-subheader">
             <Binoculars className="strait-icon" />
             <h2>Future Outlook</h2>
@@ -105,7 +105,7 @@ export default function NexusSlugPage() {
               <ContentCard key={item.id} item={item} />
             ))}
           </div>
-        </section>
+        </section> */}
 
       </div>
     </div>
