@@ -11,7 +11,8 @@ export default function Header() {
   const isDemoPage =
     cleanPath.startsWith('/dashboard') ||
     cleanPath.startsWith('/signal-fracture') ||
-    cleanPath.startsWith('/nexus');
+    cleanPath.startsWith('/nexus') ||
+    cleanPath.startsWith('/archive');
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);

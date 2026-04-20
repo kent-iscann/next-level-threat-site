@@ -203,7 +203,12 @@ export default function DashboardPage() {
         </section>
 
         <section className="dash-verticals-section">
-          <h2><Archive className="dash-verticals-h2-icon" /> Archive</h2>
+          <div className="dash-verticals-header">
+            <h2><Archive className="dash-verticals-h2-icon" /> Archive</h2>
+            <Link to="/archive" className="dash-archive-view-all">
+              View all <ArrowUpRight className="dash-latest-arrow" />
+            </Link>
+          </div>
           <div className="dash-verticals-grid">
             {verticals.map(vertical => {
               const Icon = vertical.icon;

@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import DashboardPage from './pages/DashboardPage';
 import SignalFractureSlugPage from './pages/signal-fracture/[slug]';
 import NexusSlugPage from './pages/nexus/[slug]';
+import ArchivePage from './pages/ArchivePage';
 import Landing from './pages/Landing';
 
 function ScrollToTop() {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/signal-fracture/:slug" element={<SignalFractureSlugPage />} />
               <Route path="/nexus/:slug" element={<NexusSlugPage />} />
+              <Route path="/archive" element={<ArchivePage />} />
           </Routes>
         </main>
         <Footer />
