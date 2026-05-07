@@ -8,14 +8,14 @@ export default function HeroSection() {
         <div className="hero__badge">Powered by IScann Group</div>
         <h1 className="hero__title">
           Your Chief<br />
-          <span className="accent">Geopolitical Officer.</span>
+          <span className="accent">Geopolitical Officer</span>
         </h1>
         <p className="hero__subtitle">
-          Next Level Threat decodes today's complexities and anticipates tomorrow's critical threats so you can act before risk becomes crisis.
+          Signal & Fracture identifies instability before it becomes crisis.
         </p>
         <div className="hero__actions">
-          <Link to="/dashboard" className="btn btn-primary">View Demo</Link>
-          <a href="#podcasts" className="btn btn-secondary">Explore Free Intel</a>
+          <Link to="#subscribe" className="btn btn-primary">Subscribe for Free</Link>
+          {/* <a href="#podcasts" className="btn btn-secondary">Explore Open-Source Intel</a> */}
         </div>
       </div>
       <div className="hero__bg"></div>

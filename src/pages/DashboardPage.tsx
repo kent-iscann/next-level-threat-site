@@ -139,7 +139,7 @@ export default function DashboardPage() {
         </Link> */}
 
         <header className="dash-header">
-          <h1>Next Level Threat Dashboard</h1>
+          <h1>Signal & Fracture Dashboard</h1>
         </header>
 
         <section className="dash-regions-section">

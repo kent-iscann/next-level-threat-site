@@ -3,9 +3,9 @@ import './FAQSection.css';
 
 const faqItems = [
   {
-    question: 'What is Next Level Threat?',
+    question: 'What is Signal & Fracture?',
     answer:
-      'Next Level Threat is a subscription service that delivers forward-looking geopolitical intelligence. Its flagship solution, Signal & Fracture, is a structured early-warning framework that helps clients act before risk becomes crisis',
+      'Signal & Fracture is a subscription service that delivers forward-looking geopolitical intelligence. Its flagship solution, Risk & Scenario, is a structured early-warning framework that helps clients act before risk becomes crisis',
   },
   {
     question: 'Is there a free trial?',
@@ -17,14 +17,14 @@ const faqItems = [
       'Yes, absolutely. We offer flexible subscription plans with no long-term commitments. You can cancel your subscription at any time through your account settings or by contacting our support team.',
   },
   {
-    question: 'How is Next Level Threat different from traditional geopolitical intelligence consultancies?',
+    question: 'How is Signal & Fracture different from traditional geopolitical intelligence consultancies?',
     answer:
-      'Next Level Threat provides institutional-quality geopolitical intelligence, delivered in subscription and bespoke formats, at a price point below traditional consultancies',
+      'Signal & Fracture provides institutional-quality geopolitical intelligence, delivered in subscription and bespoke formats, at a price point below traditional consultancies',
   },
   {
     question: 'Who produces the content?',
     answer:
-      'Next Level Threat is a flagship solution by IScann Group, a geopolitical intelligence consultancy with deep expertise in geopolitical risk analysis and OSINT investigation. All content is produced in-house.',
+      'Signal & Fracture is a flagship solution by IScann Group, a geopolitical intelligence consultancy with deep expertise in geopolitical risk analysis and OSINT investigation. All content is produced in-house.',
   },
   {
     question: 'What format does Signal & Fracture take?',
@@ -43,8 +43,8 @@ export default function FAQSection() {
           <h2 className="section-title">Frequently Asked Questions</h2>
           <p className="section-subtitle">
             Everything you need to know before subscribing. Can't find your answer? Reach out to us at{' '}
-            <a href="mailto:nlt@iscanngroup.com" className="faq__link">
-              nlt@iscanngroup.com
+            <a href="mailto:sf@iscanngroup.com" className="faq__link">
+              sf@iscanngroup.com
             </a>
             .
           </p>

@@ -1,5 +1,5 @@
-.audience { background-color: #000000; }
-.audience__header { text-align: center; margin-bottom: 1rem; }
+.audience { background-color: #1a1a1a; }
+.audience__header { text-align: center; }
 
 .audience__grid {
   display: grid;

@@ -26,7 +26,7 @@ export default function Header() {
       <header className={`header ${isScrolled ? 'header--scrolled' : ''} header--demo`}>
         <div className="container header__inner" style={{ justifyContent: 'space-between' }}>
           <div className="logo">
-            <Link to="/"><img src="/images/nlt_logo.png" alt="Next Level Threat Logo" /></Link>
+            <Link to="/"><img src="/images/sf-logo.png" alt="Signal & Fracture Logo" /></Link>
           </div>
           <div className="header__demo-right">
             <UserCircle className="header__avatar-icon" />
@@ -38,9 +38,8 @@ export default function Header() {
   }
 
   const navLinks = [
-    { label: 'Signal & Fracture', href: '#plus' },
-    { label: 'Nexus', href: '#plus' },
-    { label: 'Open-Source Intel', href: '#podcasts' },
+    { label: 'Free Intelligence', href: '#nexus' },
+    { label: 'Signal & Fracture Pro', href: '#plus' },
     { label: 'About', href: '#about' },
   ];
 
@@ -48,8 +47,8 @@ export default function Header() {
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="container header__inner">
           <div className="logo">
-            <Link to="/"><img src="/images/nlt_logo.png" alt="Next Level Threat Logo" /></Link>
-            <span>Next Level Threat</span>
+            <Link to="/"><img src="/images/sf-logo.png" alt="Signal & Fracture Logo" /></Link>
+            <span>Signal &<br />Fracture</span>
           </div>
 
         <button className="header__toggle" aria-label="Toggle menu" aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -66,7 +65,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <Link to="/dashboard" className="btn btn-primary nav__cta" onClick={() => setIsMenuOpen(false)}>View Demo</Link>
+          <Link to="#subscribe" className="btn btn-primary nav__cta" onClick={() => setIsMenuOpen(false)}>Subscribe</Link>
         </nav>
       </div>
     </header>

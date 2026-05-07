@@ -1,4 +1,4 @@
-.plus { background-color: #1a1a1a;}
+.plus { background: var(--bg-secondary)}
 .plus__header { text-align: center; margin-bottom: 2rem; }
 .plus__teasers {
   display: grid;
@@ -13,7 +13,7 @@
   padding: 2rem;
   transition: var(--transition);
 }
-.card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-4px); }
+.card:hover { border-color: var(--accent); transform: translateY(-4px); }
 .tease-card { position: relative; overflow: hidden; }
 .tease-card__badge {
   display: inline-block;
@@ -71,12 +71,41 @@
 
 .pricing__cards { display: none; gap: 1.25rem; margin: 0 auto; }
 .pricing__cards .pricing__card { text-align: center; }
-.pricing__card--highlight { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.15); }
-.pricing__card--active { border-color: var(--accent); box-shadow: 0 0 20px rgba(0, 229, 255, 0.1); }
-.pricing__card--active.pricing__card--highlight { border-color: var(--accent); box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
+.pricing__card--highlight { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(184, 121, 30, 0.15); }
+.pricing__card--active { border-color: var(--accent); box-shadow: 0 0 20px rgba(184, 121, 30, 0.1); }
+.pricing__card--active.pricing__card--highlight { border-color: var(--accent); box-shadow: 0 0 20px rgba(184, 121, 30, 0.2); }
 .pricing__tag { text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); font-weight: 600; margin-bottom: 1rem; }
 
 .pricing__mobile-card { display: block; }
+
+.audience__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.audience__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: var(--transition);
+}
+.audience__card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.audience__card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.audience__card-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 
 @media (min-width: 769px) {
   .pricing {
