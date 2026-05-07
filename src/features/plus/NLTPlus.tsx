@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './NLTPlus.css';
 
 const benefitItems = [
@@ -44,6 +45,21 @@ const benefitItems = [
         <polygon points="3 11 22 2 13 21 11 13 3 11" />
       </svg>
     ),
+  },
+];
+
+const audiences = [
+  {
+    title: 'International Finance',
+    description: 'Asset managers, hedge funds, family offices, and private equity firms making high-leverage decisions.',
+  },
+  {
+    title: 'Corporate Strategy & Compliance',
+    description: 'Strategic planners and compliance officers seeking to understand geopolitical risks.',
+  },
+  {
+    title: 'Chief Risk Officers',
+    description: 'Risk management professionals who need every edge to stay ahead.',
   },
 ];
 
@@ -95,20 +111,20 @@ const benefitItems = [
 // ];
 
 
-// const plans = [
-//   { key: 'monthly' as const, name: 'Monthly', price: '$29', period: '/mo', tag: 'Monthly', cta: 'Subscribe Now', highlight: false, savings: '' },
-//   { key: 'annual' as const, name: 'Annual', price: '$199', period: '/yr', tag: 'Annual', cta: 'Subscribe Now (Save 20%)', highlight: true, savings: 'Save 20%' },
-// ];
+const plans = [
+  { key: 'monthly' as const, name: 'Monthly', price: '$149', period: '/mo', tag: 'Monthly', cta: 'Coming Soon', highlight: false, savings: '' },
+  { key: 'annual' as const, name: 'Annual', price: '$119', period: '/yr', tag: 'Annual', cta: 'Coming Soon', highlight: true, savings: 'Save 20%' },
+];
 
 export default function NLTPlus() {
-  // const [plan, setPlan] = useState<'monthly' | 'annual'>('annual');
+  const [plan, setPlan] = useState<'monthly' | 'annual'>('annual');
 
   return (
     <section id="plus" className="plus section">
       <div className="container">
         <div className="plus__header">
-          <h2 className="section-title">Signal & Fracture</h2>
-          <p className="section-subtitle">Our proprietary geopolitical early-warning intelligence framework. We monitor political, economic, social, technological, and environmental indicators to identify where instability is building, how fast it is moving, and which fracture scenarios are becoming more likely.</p>
+          <h2 className="section-title">S&F Pro (Coming Soon)</h2>
+          <p className="section-subtitle">Our proprietary geopolitical early-warning intelligence framework and decision support system.</p>
         </div>
 
         <div className="plus__teasers">
@@ -131,7 +147,7 @@ export default function NLTPlus() {
         </div>
 
         <div className="plus__benefits sub-section">
-          <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>Tomorrow's Threats, Today.</h3>
+          <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>Tomorrow's Threats, Today</h3>
           <div className="benefits__grid">
             {benefitItems.map(b => (
               <div key={b.title} className="card benefit-card">
@@ -156,7 +172,21 @@ export default function NLTPlus() {
           </div>
         </div> */}
 
-        {/* <div className="pricing sub-section" style={{paddingTop: '2rem', paddingBottom: '0'}}>
+        <div id="audience" className="audience sub-section">
+          <div className="container">
+            <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>For a Organisations Operating in Geopolitical Hotspots</h3>
+            <div className="audience__grid">
+              {audiences.map(a => (
+                <div key={a.title} className="audience__card">
+                  <h3 className="audience__card-title">{a.title}</h3>
+                  <p className="audience__card-desc">{a.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="pricing sub-section" style={{paddingTop: '2rem', paddingBottom: '0'}}>
           <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>Pricing</h3>
           <div className="pricing__tabs">
             <button className={`tab ${plan === 'monthly' ? 'active' : ''}`} onClick={() => setPlan('monthly')}>Monthly</button>
@@ -171,16 +201,16 @@ export default function NLTPlus() {
                   {p.savings && <span className="tab__badge">{p.savings}</span>}
                 </div>
                 <div className="pricing__amount">{p.price}<span className="pricing__period">{p.period}</span></div>
-                <button className="btn btn-primary pricing__cta">{p.cta}</button>
+                <button disabled className="btn btn-primary pricing__cta">{p.cta}</button>
               </div>
             ))}
           </div>
 
           <div className="pricing__mobile-card card">
             <div className="pricing__amount">{plan === 'monthly' ? '$29' : '$199'}<span className="pricing__period">/{plan === 'monthly' ? 'mo' : 'yr'}</span></div>
-            <button className="btn btn-primary pricing__cta">Subscribe Now</button>
+            <button disabled className="btn btn-primary pricing__cta">Coming Soon</button>
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );

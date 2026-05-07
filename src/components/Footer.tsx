@@ -10,9 +10,8 @@ export default function Footer() {
     cleanPath.startsWith('/nexus');
 
   const navLinks = [
-    { label: 'Signal & Fracture', href: '#plus' },
-    { label: 'Nexus', href: '#nexus' },
-    { label: 'Open-Source Intel', href: '#podcasts' },
+    { label: 'Free Intelligence', href: '#nexus' },
+    { label: 'Signal & Fracture Pro', href: '#plus' },
     { label: 'About', href: '#about' },
   ];
 
@@ -20,11 +19,38 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__top">
-            <img width="48px" src="/images/nlt_logo.png" alt="Next Level Threat Logo" />
-            <h3 className="footer__title">Next Level Threat</h3>
+          <div className="logo">
+            <img src="/images/sf-logo.png" alt="Signal & Fracture Logo" />
+            <span>Signal &<br />Fracture</span>
+          </div>
           <p className="footer__tagline">Your Chief Geopolitical Officer</p>
-          {!isDemoPage && <Link to="/dashboard" className="btn btn-primary footer__cta">View Demo</Link>}
         </div>
+        {!isDemoPage && 
+            <div className="newsletter__inner">
+              <form
+                className="newsletter__form"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  // Placeholder — wire up email provider at launch
+                  alert('Thanks — placeholder signup. Real integration coming soon.');
+                }}
+              >
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                  className="newsletter__input"
+                  aria-label="Email address"
+                />
+                <button type="submit" className="btn btn-primary newsletter__btn">
+                  Subscribe
+                </button>
+              </form>
+              <p className="newsletter__note">
+                One email per week. No spam. Unsubscribe anytime.
+              </p>
+          </div>
+          }
         <div className="footer__bottom">
           <nav className="footer__nav">
             {navLinks.map(link => (

@@ -1,3 +1,4 @@
+.about {background: var(--bg-secondary)}
 .about__content { max-width: 800px; margin: 0 auto; text-align: center; }
 .about__text {
   font-size: 1.15rem;

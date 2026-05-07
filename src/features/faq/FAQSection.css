@@ -1,4 +1,4 @@
-.faq { background-color: #1a1a1a; }
+.faq { background-color: #000000; }
 .faq__header { text-align: center; margin-bottom: 1rem; }
 .faq__link { color: var(--accent); text-decoration: underline; }
 
@@ -16,7 +16,7 @@
   padding: 1.5rem 0;
   background: transparent;
   color: var(--text-primary);
-  font-family: var(--font-heading);
+  font-family: var(--font-sans);
   font-size: 1.1rem;
   font-weight: 500;
   text-align: left;

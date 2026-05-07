@@ -14,7 +14,7 @@ const offerItems = [
     ),
   },
   {
-    title: 'Nexus',
+    title: 'Watch',
     desc: 'Audio series and future outlook PDFs.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="22" height="22">

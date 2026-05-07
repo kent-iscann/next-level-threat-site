@@ -1,20 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
 
 :root {
-  --bg-primary: #050505;
-  --bg-secondary: #0A0A0A;
-  --bg-card: #111111;
-  --text-primary: #FFFFFF;
-  --text-secondary: #A3A3A3;
+  --bg-primary: #05080F;
+  --bg-secondary: #001C3C;
+  --bg-card: #0A1426;
+  --text-primary: #E8E6DF;
+  --text-secondary: #A6B3C2;
   --text-muted: #666666;
-  --accent: #00E5FF;
-  --accent-hover: #00C4DB;
-  --border: rgba(255, 255, 255, 0.08);
+  --text-accent: #5FA8C4;
+  --accent: #E8A33D;
+  --accent-hover: #B8791E;
+  --button: #C8463A;
+  --border: rgba(200, 70, 58, 0.08);
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-heading: 'Space Grotesk', sans-serif;
+  --font-sans: 'JetBrains Mono', system-ui, sans-serif;
+  --font-heading: 'Source Serif 4', sans-serif;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -32,6 +34,10 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 button { cursor: pointer; border: none; font-family: inherit; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
+.logo { display: flex; align-items: center; height: 100%;}
+.logo img { max-height: 48px; width: auto; display: block;}
+.logo span { font-family: var(--font-logo); margin-left: 0.7rem; font-size: 1.2rem; font-weight: 600; color: var(--text-primary); line-height:1.2; letter-spacing: 3px; text-transform:uppercase }
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -39,7 +45,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   padding: 0 1.5rem;
 }
 .section { padding: 6rem 0; }
-.sub-section { padding: 4rem 0; }
+.sub-section { padding: 4rem 0 2rem; }
 .section-title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -75,20 +81,21 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   letter-spacing: 0.02em;
 }
 .btn-primary {
-  background: var(--accent);
+  background: var(--button);
   color: #000;
 }
 .btn-primary:hover {
-  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 229, 255, 0.25);
+  box-shadow: 0 4px 16px rgba(200, 70, 58, 0.25);
 }
 .btn-secondary {
   background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1.5rem;
+  font-weight:300;
 }
 .btn-secondary:hover {
-  border-color: var(--text-primary);
+  border-color: var(--accent-hover);
   background: rgba(255,255,255,0.05);
 }
