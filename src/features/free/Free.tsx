@@ -1,4 +1,6 @@
-import './Nexus.css';
+import './Free.css';
+import { Gauge } from '../../components/Gauge';
+import { Signup } from '../../components/Signup';
 
 const benefitItems = [
   {
@@ -40,20 +42,20 @@ const benefitItems = [
 
 const stats = [
   { value: '137', label: 'Subscribers' },
-  { value: '38', label: 'Podcast Episodes' },
-  { value: '2', label: 'Free Watch Reports' },
+  { value: '15', label: 'Podcast Episodes' },
+  { value: '16', label: 'Free Watch Reports' },
 
 ];
 
 const testimonials = [
   {
-    quote: '"Signal & Fracture quickly became an indispensible part of our workflow. We have a much better understanding of the regions we deal with and can provide our own clients with a better service."',
-    name: 'John, Managing Partner',
+    quote: '"Signal & Fracture has quickly become an indispensible part of our workflow. We have a much better understanding of the events that could signficantly impact our operations."',
+    name: 'Robert, Managing Partner',
     org: 'Private Equity Firm',
   },
   {
     quote: '"Truth be told, we had not considered a Chief Geopolitical Officer before subscribing to Signal & Fracture. Now we can\'t imagine life without one. There\'s really no alternative to being prepared."',
-    name: 'Jane, Chief Risk Officer',
+    name: 'Natalie, Chief Risk Officer',
     org: 'Multinational Corporation',
   }
 ];
@@ -61,26 +63,32 @@ const testimonials = [
 const watchReports = [
   {
     id: 1,
-    date: 'May 6th, 2026',
-    title: 'Houthi Ceasefire',
-    desc: 'Red Sea interdiction resumes at scale before July 30th, 2026.',
+    date: 'June 4th, 2026',
+    title: 'Kazakhstan Economy',
+    desc: 'Tech diversification advances but hydrocarbons remain dominant.',
+    probability: 70,
+    target_date: '2027-12-01',
+    url: 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/kazakhstan/2026-06-04.pdf',
   },
   {
     id: 2,
-    date: 'May 3rd, 2026',
-    title: 'Mali Coup d\'Etat',
-    desc: 'Army retakes control before June 12th, 2026.',
+    date: 'June 1st, 2026',
+    title: 'Sri Lanka-China',
+    desc: 'New bilateral infrastructure financing agreement with China.',
+    probability: 70,
+    target_date: '2027-11-01',
+    url: 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/sri-lanka-china/2026-06-01.pdf',
   }
 ];
 
 
-export default function Nexus() {
+export default function Free() {
   return (
-    <section id="nexus" className="nexus section">
+    <section id="free" className="nexus section">
       <div className="container">
         <div className="nexus__header">
           <h2 className="section-title">Prepare for Tomorrow</h2>
-          <p className="section-subtitle">We continuously monitor converging signals across political, economic, social, technological, and environmental domains, giving organizations the clarity they need to protect their assets, people, operations, and strategic interests.</p>
+          <p className="section-subtitle">We continuously monitor converging signals across political, economic, military, and technological dimensions, giving organizations the clarity they need to protect their strategic interests.</p>
         </div>
 
         <div className="">
@@ -91,30 +99,54 @@ export default function Nexus() {
             <div className="free-card__report-grid">
               {watchReports.map(w => (
                 <div key={w.id} className="free-card__report">
-                  <div className="free-card__report-badge">{ w.date }</div>
-                  <div className="free-card__report-title">{ w.title }</div>
-                  <div className="free-card__report-desc">{ w.desc }</div>
-                  <button className="btn btn-secondary">View Report</button>
+                  <div className="free-card__report-date">{ w.date }</div>
+
+                  <div className="free-card__report-inner">
+                    <div className="free-card__report-main">
+                      <div className="free-card__report-title">{ w.title }</div>
+                      <div className="free-card__report-desc">{ w.desc }</div>
+                    </div>
+
+                    <div className="free-card__report-side">
+                      <Gauge score={w.probability} />
+                      {/* <div className="free-card__report-target">
+                        <strong>Target</strong>
+                        <span>{ w.target_date }</span>
+                      </div> */}
+                    </div>
+                  </div>
+
+                  <div className="free-card__report-actions">
+                    <a href={w.url} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">View Report</a>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
           <div className="card free-card free-card--signal">
+            <div className="free-card__signal-inner">
+              <div className="free-card__signal-main">
+                <div className="free-card__badge">Investigations</div>
+                <h3 className="free-card__title">Unresolved Podcast</h3>
+                <p className="free-card__desc">A demonstration of the analytical methodology behind Signal & Fracture. In our first investigation, we examine the knowledge gaps in the Iran-Contra Affair.</p>
+                <div className="free-card__player">
+                  <iframe data-testid="embed-iframe" style={{borderRadius:'12px'}} src="https://open.spotify.com/embed/episode/7KY1Yi9mYeTjMsPdx3WzZx?utm_source=generator" width="100%" height="152" frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+              </div>
+
+              <div className="free-card__signal-side">
+                <p className="free-card__signal-quote">And at the end of it all — after years of investigation, millions of pages of documents, and hundreds of hours of sworn testimony — some of the most important questions remain unanswered.</p>
+              </div>
+            </div>
+          </div>
+          {/* <div className="card free-card free-card--signal">
             <div className="free-card__badge">Critical Analysis</div>
             <h3 className="free-card__title">The Signal & Fracture Podcast</h3>
             <p className="free-card__desc">IScann Group's panel of domain experts discuss key global instabilities, from military and cyber to disinformation and finance.</p>
             <div className="free-card__player">
-              <iframe data-testid="embed-iframe" style={{borderRadius:'12px'}} src="https://open.spotify.com/embed/episode/4IYTVQwlnw1vaJEDEwzN9o?utm_source=generator" width="100%" height="152" frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe data-testid="embed-iframe" style={{borderRadius:'12px'}} src="https://open.spotify.com/embed/episode/4IYTVQwlnw1vaJEDEwzN9o?utm_source=generator" width="100%" height="152" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
-          </div>
-          <div className="card free-card free-card--signal">
-            <div className="free-card__badge">Investigations</div>
-            <h3 className="free-card__title">Resolved Podcast</h3>
-            <p className="free-card__desc">A demonstration of the analytical methodology behind Signal & Fracture. For our first investigation, we examine the Iran-Contra Affair.</p>
-            <div className="free-card__player">
-              <iframe data-testid="embed-iframe" style={{borderRadius:'12px'}} src="https://open.spotify.com/embed/episode/7KY1Yi9mYeTjMsPdx3WzZx?utm_source=generator" width="100%" height="152" frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="plus__benefits sub-section">
@@ -156,31 +188,10 @@ export default function Nexus() {
           </div>
         </div>
 
-        <div className="plus__benefits sub-section">
+        <div id="subscribe" className="plus__benefits sub-section">
           <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>Subscribe for Free</h3>
-          <div className="newsletter__inner">
-            <form
-              className="newsletter__form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                // Placeholder — wire up email provider at launch
-                alert('Thanks — placeholder signup. Real integration coming soon.');
-              }}
-            >
-              <input
-                type="email"
-                placeholder="your@email.com"
-                required
-                className="newsletter__input"
-                aria-label="Email address"
-              />
-              <button type="submit" className="btn btn-primary newsletter__btn">
-                Subscribe
-              </button>
-            </form>
-            <p className="newsletter__note">
-              One email per week. No spam. Unsubscribe anytime.
-            </p>
+          <div className="newsletter__wrapper">
+            <Signup />
           </div>
         </div>
 

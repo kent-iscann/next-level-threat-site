@@ -43,4 +43,4 @@
   margin-bottom: 3rem;
   line-height: 1.6;
 }
-.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero__actions { gap: 1rem; }

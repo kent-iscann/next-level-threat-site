@@ -1,5 +1,5 @@
 import './HeroSection.css';
-import { Link } from 'react-router-dom';
+import { Signup } from '../../components/Signup';
 
 export default function HeroSection() {
   return (
@@ -14,8 +14,7 @@ export default function HeroSection() {
           Signal & Fracture identifies instability before it becomes crisis.
         </p>
         <div className="hero__actions">
-          <Link to="#subscribe" className="btn btn-primary">Subscribe for Free</Link>
-          {/* <a href="#podcasts" className="btn btn-secondary">Explore Open-Source Intel</a> */}
+          <Signup />
         </div>
       </div>
       <div className="hero__bg"></div>

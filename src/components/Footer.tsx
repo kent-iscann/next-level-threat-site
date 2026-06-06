@@ -1,16 +1,17 @@
 import { useLocation } from 'react-router-dom';
+import { Signup } from '../components/Signup';
 import './Footer.css';
 
 export default function Footer() {
   const { pathname } = useLocation();
   const cleanPath = pathname.replace(/\/+$/, '');
   const isDemoPage =
-    cleanPath.startsWith('/dashboard') ||
-    cleanPath.startsWith('/signal-fracture') ||
-    cleanPath.startsWith('/nexus');
+    // cleanPath.startsWith('/dashboard') ||
+    // cleanPath.startsWith('/signal-fracture') ||
+    cleanPath.startsWith('/archive');
 
   const navLinks = [
-    { label: 'Free Intelligence', href: '#nexus' },
+    { label: 'Free Subscription', href: '#nexus' },
     { label: 'Signal & Fracture Pro', href: '#plus' },
     { label: 'About', href: '#about' },
   ];
@@ -26,31 +27,10 @@ export default function Footer() {
           <p className="footer__tagline">Your Chief Geopolitical Officer</p>
         </div>
         {!isDemoPage && 
-            <div className="newsletter__inner">
-              <form
-                className="newsletter__form"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // Placeholder — wire up email provider at launch
-                  alert('Thanks — placeholder signup. Real integration coming soon.');
-                }}
-              >
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  required
-                  className="newsletter__input"
-                  aria-label="Email address"
-                />
-                <button type="submit" className="btn btn-primary newsletter__btn">
-                  Subscribe
-                </button>
-              </form>
-              <p className="newsletter__note">
-                One email per week. No spam. Unsubscribe anytime.
-              </p>
+          <div className="newsletter__wrapper">
+            <Signup />
           </div>
-          }
+        }
         <div className="footer__bottom">
           <nav className="footer__nav">
             {navLinks.map(link => (

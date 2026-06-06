@@ -9,9 +9,9 @@ export default function Header() {
   const { pathname } = useLocation();
   const cleanPath = pathname.replace(/\/+$/, '');
   const isDemoPage =
-    cleanPath.startsWith('/dashboard') ||
-    cleanPath.startsWith('/signal-fracture') ||
-    cleanPath.startsWith('/nexus') ||
+    // cleanPath.startsWith('/dashboard') ||
+    // cleanPath.startsWith('/signal-fracture') ||
+    // cleanPath.startsWith('/nexus') ||
     cleanPath.startsWith('/archive');
 
   useEffect(() => {
@@ -27,10 +27,11 @@ export default function Header() {
         <div className="container header__inner" style={{ justifyContent: 'space-between' }}>
           <div className="logo">
             <Link to="/"><img src="/images/sf-logo.png" alt="Signal & Fracture Logo" /></Link>
+            <span>Signal &<br />Fracture</span>
           </div>
           <div className="header__demo-right">
             <UserCircle className="header__avatar-icon" />
-            <span className="header__greeting">Welcome, Demo User</span>
+            <span className="header__greeting">Welcome, Subscriber</span>
           </div>
         </div>
       </header>
@@ -38,7 +39,7 @@ export default function Header() {
   }
 
   const navLinks = [
-    { label: 'Free Intelligence', href: '#nexus' },
+    { label: 'Free Subscription', href: '#free' },
     { label: 'Signal & Fracture Pro', href: '#plus' },
     { label: 'About', href: '#about' },
   ];
@@ -65,7 +66,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <Link to="#subscribe" className="btn btn-primary nav__cta" onClick={() => setIsMenuOpen(false)}>Subscribe</Link>
+          {/* <Link to="#subscribe" className="btn btn-primary nav__cta" onClick={() => setIsMenuOpen(false)}>Subscribe</Link> */}
         </nav>
       </div>
     </header>

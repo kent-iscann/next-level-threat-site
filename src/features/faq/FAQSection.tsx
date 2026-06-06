@@ -5,32 +5,35 @@ const faqItems = [
   {
     question: 'What is Signal & Fracture?',
     answer:
-      'Signal & Fracture is a subscription service that delivers forward-looking geopolitical intelligence. Its flagship solution, Risk & Scenario, is a structured early-warning framework that helps clients act before risk becomes crisis',
+      'Signal & Fracture is a free subscription service that delivers forward-looking geopolitical intelligence in the form of Watch Reports, briefings, and podcast episodes. Its paid offering, Signal & Fracture Pro, is a structured early-warning framework that helps clients act before risk becomes crisis',
   },
   {
-    question: 'Is there a free trial?',
-    answer: 'We have a demo version available for public viewing, which includes access to a selection of content.',
+    question: 'Do I need to pay?',
+    answer: 'No. We currently offer a free subscription to our Signal & Fracture intelligence. In the near future, we will be adding a paid offering called Signal & Fracture Pro.',
   },
   {
-    question: 'Can I cancel my subscription anytime?',
+    question: 'How often will I receive intelligence reports?',
+    answer: 'We send out Watch Reports and briefings by email once per week. Our podcast episodes are released sporadically, usually once or twice per quarter.',
+  },
+  {
+    question: 'Is there an archive of past Watch Reports?',
+    answer: 'Yes, we maintain an archive of all past Watch Reports that subscribers can access at any time.',
+  },
+  {
+    question: 'Can I unsubscribe anytime?',
     answer:
-      'Yes, absolutely. We offer flexible subscription plans with no long-term commitments. You can cancel your subscription at any time through your account settings or by contacting our support team.',
+      'Yes, absolutely. Use the unsubscribe link in any of our emails.',
   },
   {
-    question: 'How is Signal & Fracture different from traditional geopolitical intelligence consultancies?',
+    question: 'How is Signal & Fracture Pro different from traditional geopolitical intelligence consultancies?',
     answer:
-      'Signal & Fracture provides institutional-quality geopolitical intelligence, delivered in subscription and bespoke formats, at a price point below traditional consultancies',
+      'Signal & Fracture Pro provides institutional-quality geopolitical intelligence, delivered in general and bespoke formats, at a price point below traditional consultancies',
   },
   {
     question: 'Who produces the content?',
     answer:
       'Signal & Fracture is a flagship solution by IScann Group, a geopolitical intelligence consultancy with deep expertise in geopolitical risk analysis and OSINT investigation. All content is produced in-house.',
-  },
-  {
-    question: 'What format does Signal & Fracture take?',
-    answer:
-      'We offer a variety of formats, including full report and overview PDFs, as well as audio overviews and deep-dives. Our content is available via the subscriber dashboard and delivered by email.',
-  },
+  }
 ];
 
 export default function FAQSection() {
@@ -43,8 +46,8 @@ export default function FAQSection() {
           <h2 className="section-title">Frequently Asked Questions</h2>
           <p className="section-subtitle">
             Everything you need to know before subscribing. Can't find your answer? Reach out to us at{' '}
-            <a href="mailto:sf@iscanngroup.com" className="faq__link">
-              sf@iscanngroup.com
+            <a href="mailto:info@iscanngroup.com" className="faq__link">
+              info@iscanngroup.com
             </a>
             .
           </p>

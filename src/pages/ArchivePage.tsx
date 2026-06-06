@@ -409,13 +409,13 @@ export default function ArchivePage() {
   return (
     <div className="container">
       <div className="archive-page">
-        <Link to="/dashboard" className="archive-back-link">
+        {/* <Link to="/dashboard" className="archive-back-link">
           <ArrowLeft className="archive-back-link-icon" /> Back to Dashboard
-        </Link>
+        </Link> */}
 
         <header className="archive-header">
-          <h1>Intelligence Archive</h1>
-          <p>A complete catalog of our content.</p>
+          <h1>Watch Report Archive</h1>
+          <p>A complete catalog of our free content.</p>
         </header>
 
         {/* ─── Controls ─── */}
