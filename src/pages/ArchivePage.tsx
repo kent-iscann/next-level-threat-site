@@ -1,7 +1,7 @@
 import './ArchivePage.css';
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Search, ChevronDown, ChevronUp, ArrowUpRight, FileText, Headphones, Presentation } from 'lucide-react';
+import { Search, ChevronDown, ChevronUp, ArrowUpRight, FileText, Headphones, Presentation } from 'lucide-react';
 
 // ─── Types ───
 type ContentItem = {
