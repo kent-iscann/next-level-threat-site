@@ -421,6 +421,9 @@
 .archive-expanded__view-link svg { width: 14px; height: 14px; }
 
 /* Content section in expanded */
+.archive-content-section {
+  margin-bottom: 1.5rem;
+}
 .archive-content-section h4 {
   font-family: var(--font-heading);
   font-size: 1.05rem;
@@ -452,7 +455,7 @@
   transition: var(--transition);
 }
 .archive-content-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent);
 }
 
 .archive-content-card__icon {
@@ -530,6 +533,42 @@
   height: 32px;
   width: 200px;
   max-width: 200px;
+}
+.archive-prediction-card {
+  border-color: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.archive-prediction-card__body {
+  flex: 1;
+  min-width: 0;
+}
+.archive-prediction-card__gauge {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.archive-prediction-card__gauge .threat-index-gauge {
+  width: 66px;
+  height: 66px;
+}
+.archive-prediction-card__gauge .threat-index-ring {
+  width: 66px;
+  height: 66px;
+}
+.archive-prediction-card__gauge .threat-index-value {
+  font-size: 0.9rem;
+}
+.archive-content-card__icon--prediction { background: rgba(234, 179, 8, 0.1); }
+.icon-prediction { color: #fbbf24; }
+.badge-prediction { background: rgba(234, 179, 8, 0.12); color: #fbbf24; }
+.archive-prediction-details p {
+  margin: 0.25rem 0 0;
+  color: var(--text-accent);
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 .cta-disabled {
   padding: 0.5rem 0.85rem;

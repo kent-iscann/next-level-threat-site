@@ -7,6 +7,8 @@
   margin-bottom: 2rem;
 }
 
+.nexus a {color: var(--accent)}
+
 .card:hover { border-color: var(--accent); transform: translateY(-4px); }
 .free-card { overflow: hidden; width:100%; margin-bottom:2rem; }
 .free-card__badge {
@@ -83,9 +85,9 @@
 .free-card__report-side {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
 }
 .free-card__report-target {
   margin-top: 0.5rem;

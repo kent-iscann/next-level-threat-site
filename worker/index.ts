@@ -13,6 +13,10 @@ export default {
       return handleSubscribe(request);
     }
 
+    if (url.pathname === '/api/manifest' && request.method === 'GET') {
+      return handleManifestProxy();
+    }
+
     return new Response('Not found', { status: 404 });
   },
 };
@@ -66,4 +70,20 @@ async function handleSubscribe(request: Request): Promise<Response> {
   }
 
   return Response.json({ success: true, data: responseData });
+}
+
+async function handleManifestProxy(): Promise<Response> {
+  const MANIFEST_URL = 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/manifest.json';
+  try {
+    const res = await fetch(MANIFEST_URL, { method: 'GET' });
+    const text = await res.text();
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Cache-Control': 'public, max-age=300',
+    };
+    return new Response(text, { status: res.status, headers });
+  } catch (err: any) {
+    return Response.json({ error: 'Failed to fetch manifest proxy', details: String(err) }, { status: 502 });
+  }
 }
