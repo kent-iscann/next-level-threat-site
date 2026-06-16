@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import DashboardPage from './pages/DashboardPage';
-import SignalFractureSlugPage from './pages/signal-fracture/[slug]';
-import NexusSlugPage from './pages/nexus/[slug]';
+// import DashboardPage from './pages/DashboardPage';
+// import SignalFractureSlugPage from './pages/signal-fracture/[slug]';
+// import NexusSlugPage from './pages/nexus/[slug]';
 import ArchivePage from './pages/ArchivePage';
 import Landing from './pages/Landing';
 
