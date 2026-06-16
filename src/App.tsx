@@ -26,9 +26,9 @@ function App() {
         <main>
           <Routes>
               <Route path="/" element={<Landing />} />
-              <Route path="/dashboard" element={<DashboardPage />} />
+              {/* <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/signal-fracture/:slug" element={<SignalFractureSlugPage />} />
-              <Route path="/nexus/:slug" element={<NexusSlugPage />} />
+              <Route path="/nexus/:slug" element={<NexusSlugPage />} /> */}
               <Route path="/archive" element={<ArchivePage />} />
           </Routes>
         </main>

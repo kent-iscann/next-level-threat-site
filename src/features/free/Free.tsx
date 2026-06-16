@@ -68,16 +68,16 @@ const watchReports = [
     desc: 'Kazakhstan\'s economic diversification will continue to advance in the tech sector but fail to materially reduce hydrocarbon dependence over the next 18 months.',
     probability: 70,
     target_date: 'December 2027',
-    url: 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/kazakhstan/2026-06-04.pdf',
+    url: 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/kazakhstan-economy/2026-06-04.pdf',
   },
   {
     id: 2,
     date: 'June 1st, 2026',
-    title: 'Sri Lanka-China',
+    title: 'Sri Lankan Financial Relationship with China',
     desc: 'Sri Lanka will sign a new bilateral infrastructure financing agreement with China within the next 18 months.',
     probability: 70,
     target_date: 'November 2027',
-    url: 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/sri-lanka-china/2026-06-01.pdf',
+    url: 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/sri-lankan-financial-relationship-china/2026-06-01.pdf',
   }
 ];
 
@@ -128,7 +128,7 @@ export default function Free() {
               <div className="free-card__signal-main">
                 <div className="free-card__badge">Investigations</div>
                 <h3 className="free-card__title">Unresolved Podcast</h3>
-                <p className="free-card__desc">A demonstration of the analytical methodology behind Signal & Fracture. In our first investigation, we examine the knowledge gaps in the Iran-Contra Affair. Listen on <a href="https://open.spotify.com/show/7ek6y9eWrqBcnORRi7o5Ae?si=fa3becfb61cb4eca" target="_blank" rel="noopener noreferrer">Spotify</a> and <a href="https://podcasts.apple.com/gb/podcast/unresolved/id1891064768" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>.</p>
+                <p className="free-card__desc">A demonstration of the analytical methodology behind Signal & Fracture. In our first investigation, we investigate what we still don't know about the Iran-Contra Affair. Listen on <a href="https://open.spotify.com/show/7ek6y9eWrqBcnORRi7o5Ae?si=fa3becfb61cb4eca" target="_blank" rel="noopener noreferrer">Spotify</a> and <a href="https://podcasts.apple.com/gb/podcast/unresolved/id1891064768" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>.</p>
                 <div className="free-card__player">
                   <iframe data-testid="embed-iframe" style={{borderRadius:'12px'}} src="https://open.spotify.com/embed/episode/7KY1Yi9mYeTjMsPdx3WzZx?utm_source=generator" width="100%" height="152" frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
