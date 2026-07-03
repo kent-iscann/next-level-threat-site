@@ -605,11 +605,13 @@
 
 /* ─── Responsive ─── */
 @media (max-width: 700px) {
-  .archive-page { padding: 4rem 0.75rem 3rem; }
+  .archive-page { padding: 4.5rem 0rem 3rem; }
+  .archive-header {margin-bottom: 1.5rem;}
   .archive-controls__filters { gap: 0.4rem; }
   .archive-table__cell { padding: 0.65rem 0.75rem; font-size: 0.82rem; }
   .archive-expanded-content { padding: 1rem; }
   .archive-expanded__content-grid { grid-template-columns: 1fr; }
   .archive-filter__menu { min-width: 160px; }
   .cta-play audio { width: 160px; max-width: 160px; }
+  .header__greeting { display: none; } 
 }
