@@ -8,6 +8,7 @@ export type ReportItem = {
   prediction?: string;
   targetDate?: string;
   probability?: string;
+  status?: string;
 };
 
 export type Topic = {
@@ -95,8 +96,14 @@ function normalizeList(list: any[]): Topic[] {
     topicId: t.id || slugify(t.name || t.title || 'topic'),
     topicName: t.topic || t.title || t.topicName || 'Topic',
     slug: slugify(t.slug || t.name || t.title || t.topicName || 'topic'),
-    reports: Array.isArray(t.reports) ? t.reports.map(normalizeReport) : (t.items || []).map(normalizeReport),
+    reports: Array.isArray(t.reports)
+      ? t.reports.map(normalizeReport)
+      : (t.items || []).map(normalizeReport),
   }));
+}
+
+function normalizeStatus(r: any): string | undefined {
+  return r.status || r.state || r.statusText || r.reportStatus;
 }
 
 function normalizeReport(r: any): ReportItem {
@@ -110,6 +117,7 @@ function normalizeReport(r: any): ReportItem {
     prediction: r.prediction || r.prediction_text || r.predictionText,
     targetDate: r.target_date || r.targetDate,
     probability: r.probability != null ? String(r.probability) : undefined,
+    status: normalizeStatus(r),
   };
 }
 

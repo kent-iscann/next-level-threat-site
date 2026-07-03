@@ -15,6 +15,7 @@ type ContentItem = {
   prediction?: string;
   targetDate?: string;
   probability?: string;
+  status?: string;
 };
 
 type TopicEntry = {
@@ -95,10 +96,20 @@ function summarizePredictions(content: ContentItem[]): PredictionGroup[] {
   const groups = new Map<string, PredictionGroup>();
 
   content.forEach((item) => {
-    const prediction = item.prediction?.trim() || 'Unknown';
-    if (!groups.has(prediction)) {
-      groups.set(prediction, {
-        prediction,
+    const status = item.status?.trim().toLowerCase();
+    if (status && ['inactive', 'archived', 'retired', 'removed', 'deleted'].includes(status)) {
+      return;
+    }
+
+    const prediction = item.prediction?.trim();
+    if (!prediction) {
+      return;
+    }
+
+    const key = prediction;
+    if (!groups.has(key)) {
+      groups.set(key, {
+        prediction: key,
         targetDate: item.targetDate,
         probability: item.probability,
         latestDate: item.date,
@@ -106,7 +117,7 @@ function summarizePredictions(content: ContentItem[]): PredictionGroup[] {
       return;
     }
 
-    const existing = groups.get(prediction)!;
+    const existing = groups.get(key)!;
     const currentDate = item.date ? parseDateStr(item.date) : 0;
     const existingDate = existing.latestDate ? parseDateStr(existing.latestDate) : 0;
     if (currentDate > existingDate) {
@@ -179,7 +190,7 @@ function ArchiveRow({
             <div className="archive-expanded-content">
               {predictionGroups.length > 0 && (
                 <div className="archive-content-section">
-                  <h4>Predictions ({predictionGroups.length})</h4>
+                  <h4>Active Predictions ({predictionGroups.length})</h4>
                   <div className="archive-expanded__content-grid">
                     {predictionGroups.map((group) => (
                       <PredictionCard key={group.prediction} group={group} />
@@ -252,29 +263,32 @@ export default function ArchivePage() {
 
         if (cancelled) return;
 
-        const entries: TopicEntry[] = topics.map((t) => {
-          const content = (t.reports || []).map((r, i) => ({
-            id: i,
-            type: r.type || 'report',
-            title: r.title,
-            description: r.description || '',
-            date: r.date || '',
-            source: r.url || '',
-            prediction: r.prediction,
-            targetDate: r.targetDate,
-            probability: r.probability,
-          }));
+        const entries: TopicEntry[] = topics
+          .map((t) => {
+            const content = (t.reports || []).map((r, i) => ({
+              id: i,
+              type: r.type || 'report',
+              title: r.title,
+              description: r.description || '',
+              date: r.date || '',
+              source: r.url || '',
+              prediction: r.prediction,
+              targetDate: r.targetDate,
+              probability: r.probability,
+              status: r.status,
+            }));
 
-          const latestMs = (t.reports || []).reduce((acc, r) => Math.max(acc, parseDateStr(r.date)), 0);
-          const publishDate = latestMs ? new Date(latestMs).toISOString().slice(0, 10) : '';
+            const latestMs = (content || []).reduce((acc, item) => Math.max(acc, parseDateStr(item.date)), 0);
+            const publishDate = latestMs ? new Date(latestMs).toISOString().slice(0, 10) : '';
 
-          return {
-            slug: t.slug,
-            title: t.topicName,
-            publishDate,
-            content,
-          };
-        });
+            return {
+              slug: t.slug,
+              title: t.topicName,
+              publishDate,
+              content,
+            };
+          })
+          .filter((entry) => entry.content.length > 0);
 
         entries.sort((a, b) => {
           if (!a.publishDate) return 1;
