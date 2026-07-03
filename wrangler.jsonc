@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "next-level-threat-site",
+  "name": "signal-and-fracture",
   "compatibility_date": "2026-04-20",
   "observability": {
     "enabled": true
