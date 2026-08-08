@@ -10,7 +10,7 @@
  * single request.
  */
 import { createRemoteJWKSet, jwtVerify, errors as joseErrors } from 'jose';
-import { optionalEnv, requireEnv } from './env.ts';
+import { optionalEnv, requireEnv } from './env.js';
 
 export type AuthenticatedUser = {
   id: string;

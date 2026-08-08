@@ -29,8 +29,8 @@ export default function Header() {
       <header className={`header ${isScrolled ? 'header--scrolled' : ''} header--demo`}>
         <div className="container header__inner" style={{ justifyContent: 'space-between' }}>
           <div className="logo">
-            <Link to="/"><img src="/images/sf-logo.png" alt="Signal & Fracture Logo" /></Link>
-            <span>Signal &<br />Fracture</span>
+            <Link to="/"><img src="/images/sf-logo.png" alt="Signal & Fracture Logo" />
+            <span>Signal &<br />Fracture</span></Link>
           </div>
           <div className="header__demo-right">
             <UserCircle className="header__avatar-icon" />

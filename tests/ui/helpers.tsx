@@ -37,7 +37,10 @@ export function makeFakeSupabase(initialSession: Session | null = null) {
   // can return an error — inference from the happy-path body alone gives
   // `error: null` and a zero-length argument tuple.
   type AuthResult = { data: unknown; error: Error | null };
-  type OtpParams = { email: string; options: { emailRedirectTo?: string } };
+  type OtpParams = {
+    email: string;
+    options: { shouldCreateUser?: boolean; emailRedirectTo?: string };
+  };
   type VerifyParams = { email: string; token: string; type: string };
 
   const auth = {

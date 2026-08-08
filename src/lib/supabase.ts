@@ -12,19 +12,16 @@ if (!url || !anonKey) {
 /**
  * Browser Supabase client. Only ever holds the publishable (anon) key — every
  * privileged operation goes through /api, which uses the secret key server-side.
+ *
+ * Sign-in is 6-digit code only, so there is no callback URL to parse:
+ * detectSessionInUrl is off. This sidesteps the two failure modes that hit
+ * corporate mailboxes hardest — link scanners consuming single-use magic links,
+ * and PKCE breaking when a link opens in a different browser than requested it.
  */
 export const supabase = createClient(url, anonKey, {
   auth: {
-    // PKCE keeps the one-time code useless to anyone who intercepts the email,
-    // at the cost of requiring the link to open in the same browser that
-    // requested it. See docs/auth.md for the corporate-inbox trade-off.
-    flowType: 'pkce',
-    detectSessionInUrl: true,
+    detectSessionInUrl: false,
     persistSession: true,
     autoRefreshToken: true,
   },
 });
-
-/** True when OTP code entry is offered alongside the magic link. Requires the
- *  Supabase email template to include {{ .Token }} — see docs/auth.md. */
-export const OTP_CODE_ENABLED = import.meta.env.VITE_AUTH_OTP_ENABLED === 'true';

@@ -5,10 +5,9 @@
  * those into the client bundle at build time. Server secrets are unprefixed and
  * are read from process.env at request time.
  *
- * RUNTIME CONSTRAINT: Vercel executes these files with Node's strip-only type
- * removal, which erases types but performs no code generation. TypeScript that
- * needs transformation — parameter properties, enums, decorators, namespaces —
- * type-checks fine and then fails at module load. See tests/api/module-load.test.ts.
+ * RUNTIME CONSTRAINT: Vercel compiles api/*.ts to api/*.js but does not rewrite
+ * import specifiers, so every relative import here must be written with a `.js`
+ * extension. See tests/api/import-specifiers.test.ts.
  */
 
 export class MissingEnvError extends Error {

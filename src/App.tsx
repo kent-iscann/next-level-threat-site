@@ -11,7 +11,6 @@ import { RequireAuth } from './auth/RequireAuth';
 import ArchivePage from './pages/ArchivePage';
 import Landing from './pages/Landing';
 import LoginPage from './pages/LoginPage';
-import AuthCallbackPage from './pages/AuthCallbackPage';
 import ProPage from './pages/ProPage';
 
 function ScrollToTop() {
@@ -37,7 +36,6 @@ function App() {
                 <Route path="/nexus/:slug" element={<NexusSlugPage />} /> */}
                 <Route path="/archive" element={<ArchivePage />} />
                 <Route path="/login" element={<LoginPage />} />
-                <Route path="/auth/callback" element={<AuthCallbackPage />} />
                 <Route
                   path="/pro"
                   element={

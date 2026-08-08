@@ -5,8 +5,8 @@
  * so it exists to survive CORS or network failures against the bucket. Once the
  * manifest moves to Supabase Storage this only needs its env var repointed.
  */
-import { corsHeaders, jsonError } from './_lib/http.ts';
-import { optionalEnv } from './_lib/env.ts';
+import { corsHeaders, jsonError } from './_lib/http.js';
+import { optionalEnv } from './_lib/env.js';
 
 const DEFAULT_MANIFEST_URL =
   'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/manifest.json';

@@ -5,8 +5,8 @@
  * this is where subscription tier joins the response, making it the single
  * endpoint the PRO UI asks "who am I and what can I see?".
  */
-import { json, jsonError } from './_lib/http.ts';
-import { requireUser, UnauthorizedError } from './_lib/auth.ts';
+import { json, jsonError } from './_lib/http.js';
+import { requireUser, UnauthorizedError } from './_lib/auth.js';
 
 export async function GET(request: Request): Promise<Response> {
   try {

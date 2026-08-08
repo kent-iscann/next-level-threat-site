@@ -15,8 +15,9 @@ export type AuthState = {
   /** True until the initial session lookup settles. Guards against a redirect
    *  to /login flashing before a stored session is restored. */
   loading: boolean;
-  signInWithEmail: (email: string, redirectTo?: string) => Promise<void>;
-  verifyOtpCode: (email: string, token: string) => Promise<void>;
+  /** Emails a 6-digit sign-in code, creating the account if it is new. */
+  sendLoginCode: (email: string) => Promise<void>;
+  verifyLoginCode: (email: string, token: string) => Promise<void>;
   signOut: () => Promise<void>;
 };
 
@@ -60,17 +61,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       session,
       user: session?.user ?? null,
       loading,
-      async signInWithEmail(email, redirectTo) {
+      async sendLoginCode(email) {
+        // No emailRedirectTo: the email carries a code, not a link. Supabase
+        // picks the template by account state — an existing user gets "Magic
+        // Link", a new one gets "Confirm signup" — so BOTH templates must
+        // contain {{ .Token }} or new subscribers receive an unusable email.
         const { error } = await supabase.auth.signInWithOtp({
           email,
-          options: {
-            emailRedirectTo:
-              redirectTo ?? `${window.location.origin}/auth/callback`,
-          },
+          options: { shouldCreateUser: true },
         });
         if (error) throw error;
       },
-      async verifyOtpCode(email, token) {
+      async verifyLoginCode(email, token) {
+        // 'email' is correct for both the signup and the returning-user code.
         const { error } = await supabase.auth.verifyOtp({
           email,
           token,

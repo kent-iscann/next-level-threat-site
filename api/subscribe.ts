@@ -6,10 +6,10 @@
  *   - the email is validated and normalised before a Brevo call is spent
  *   - the Brevo error body is no longer echoed to the client
  */
-import { corsHeaders, json, jsonError, badRequest, serverError } from './_lib/http.ts';
-import { optionalEnv, requireEnv, MissingEnvError } from './_lib/env.ts';
-import { isValidEmail, normalizeEmail, readJson } from './_lib/validation.ts';
-import { upsertContact } from './_lib/brevo.ts';
+import { corsHeaders, json, jsonError, badRequest, serverError } from './_lib/http.js';
+import { optionalEnv, requireEnv, MissingEnvError } from './_lib/env.js';
+import { isValidEmail, normalizeEmail, readJson } from './_lib/validation.js';
+import { upsertContact } from './_lib/brevo.js';
 
 const DEFAULT_FREE_LIST_ID = 3;
 
