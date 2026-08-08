@@ -3,6 +3,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { Search, ChevronDown, ChevronUp, ArrowUpRight, FileText, Headphones, Presentation } from 'lucide-react';
 import { fetchWatchManifest, parseDateStr } from '../utils/archive';
 import { Gauge } from '../components/Gauge';
+import { WATCH_REPORTS_MANIFEST_URL, MANIFEST_FALLBACK_URL } from '../config';
 
 // ─── Types ───
 type ContentItem = {
@@ -240,8 +241,6 @@ export default function ArchivePage() {
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
   const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
 
-  const MANIFEST_URL = 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/manifest.json';
-
   useEffect(() => {
     let cancelled = false;
 
@@ -252,10 +251,10 @@ export default function ArchivePage() {
       try {
         let topics = [];
         try {
-          topics = await fetchWatchManifest(MANIFEST_URL);
+          topics = await fetchWatchManifest(WATCH_REPORTS_MANIFEST_URL);
         } catch (err) {
           try {
-            topics = await fetchWatchManifest('/api/manifest');
+            topics = await fetchWatchManifest(MANIFEST_FALLBACK_URL);
           } catch (err2) {
             throw err2 || err;
           }

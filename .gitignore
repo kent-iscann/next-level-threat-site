@@ -4,8 +4,13 @@ dist/
 .env.*
 .DS_Store
 
-# wrangler files
-.wrangler
-.dev.vars*
-!.dev.vars.example
 !.env.example
+
+# vercel
+.vercel
+
+# cloudflare (retained until the Vercel deployment is verified, then removable)
+.wrangler
+
+# test output
+coverage/

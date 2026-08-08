@@ -1,6 +1,7 @@
 import './Free.css';
 import { Gauge } from '../../components/Gauge';
 import { Signup } from '../../components/Signup';
+import { contentUrl } from '../../config';
 
 const benefitItems = [
   {
@@ -68,7 +69,7 @@ const watchReports = [
     desc: 'Kazakhstan\'s economic diversification will continue to advance in the tech sector but fail to materially reduce hydrocarbon dependence over the next 18 months.',
     probability: 70,
     target_date: 'December 2027',
-    url: 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/kazakhstan-economy/2026-06-04.pdf',
+    url: contentUrl('watch-reports/kazakhstan-economy/2026-06-04.pdf'),
   },
   {
     id: 2,
@@ -77,7 +78,7 @@ const watchReports = [
     desc: 'Sri Lanka will sign a new bilateral infrastructure financing agreement with China within the next 18 months.',
     probability: 70,
     target_date: 'November 2027',
-    url: 'https://pub-70e08d62c8314675b40c42f0fe4be6fb.r2.dev/watch-reports/sri-lankan-financial-relationship-china/2026-06-01.pdf',
+    url: contentUrl('watch-reports/sri-lankan-financial-relationship-china/2026-06-01.pdf'),
   }
 ];
 
