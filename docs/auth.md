@@ -1,7 +1,7 @@
 # Authentication (Phase 1)
 
-Passwordless sign-in via a **6-digit emailed code**. No magic links, no
-passwords. The server never calls Supabase to check a token.
+Passwordless sign-in via an **emailed numeric code** (8 digits by default). No
+magic links, no passwords. The server never calls Supabase to check a token.
 
 ## Why code-only
 
@@ -41,17 +41,18 @@ access — anyone can edit the bundle. Real gating happens in `/api`.
 
 ## Required Supabase configuration
 
-**1. `{{ .Token }}` in BOTH email templates.** Supabase picks the template by
-account state:
+**1. `{{ .Token }}` in the Magic Link template.**
 
-| Template | Sent to |
-|---|---|
-| **Magic Link** | an existing user signing in |
-| **Confirm signup** | a brand-new address (`shouldCreateUser: true`) |
+"Confirm email" is **disabled** on this project, so new and existing addresses
+both receive the Magic Link template and a single template carries the whole
+flow. If confirm-email is ever re-enabled, new signups switch to the **Confirm
+signup** template and that one needs `{{ .Token }}` too — otherwise every new
+subscriber gets an unusable email while existing users are unaffected, which is
+a nasty thing to debug.
 
-If only one contains `{{ .Token }}`, that half of your users gets an unusable
-email. Since new PRO subscribers are by definition new addresses, **Confirm
-signup is the one that matters most at launch.**
+Disabling confirm-email does not weaken anything here: possession of the code
+already proves control of the inbox, so a separate confirmation step would be
+verifying the same fact twice.
 
 **2. Code length must match `VITE_AUTH_CODE_LENGTH`.** Supabase's email OTP
 length is configurable from 6 to 10 digits at Authentication → Email settings

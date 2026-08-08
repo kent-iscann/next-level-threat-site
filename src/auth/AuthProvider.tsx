@@ -40,8 +40,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (active) setLoading(false);
       });
 
-    // Fires for SIGNED_IN, SIGNED_OUT, TOKEN_REFRESHED and the PKCE exchange
-    // that detectSessionInUrl performs when the magic-link callback loads.
+    // Fires for SIGNED_IN (including the verifyOtp success), SIGNED_OUT and
+    // TOKEN_REFRESHED.
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, nextSession) => {

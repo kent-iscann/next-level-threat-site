@@ -9,7 +9,6 @@ vi.mock('../../src/lib/supabase', () => ({
   get supabase() {
     return fake.current!.client;
   },
-  OTP_CODE_ENABLED: false,
 }));
 
 const { AuthProvider } = await import('../../src/auth/AuthProvider.tsx');
@@ -78,12 +77,12 @@ describe('<RequireAuth>', () => {
     expect(await screen.findByText('LOGIN PAGE')).toBeInTheDocument();
   });
 
-  it('picks up a session delivered by the magic-link exchange', async () => {
+  it('picks up a session delivered after initial load', async () => {
     renderGuarded();
     fake.current!.settle(null);
     await screen.findByText('LOGIN PAGE');
 
-    // detectSessionInUrl completing after initial load
+    // e.g. verifyOtp succeeding, or a token refresh restoring a session
     fake.current!.emit('SIGNED_IN', makeSession());
     // The router has already navigated to /login; the guard's job is to stop
     // blocking, which the login page then acts on by redirecting onward.

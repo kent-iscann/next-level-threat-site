@@ -63,7 +63,7 @@ export function makeFakeSupabase(initialSession: Session | null = null) {
     auth,
     /** Resolves the pending getSession() call. */
     settle: (session: Session | null = initialSession) => resolveSession?.(session),
-    /** Pushes an auth state change, as a magic-link exchange would. */
+    /** Pushes an auth state change, as verifyOtp or a refresh would. */
     emit: (event: string, session: Session | null) => listener?.(event, session),
   };
 }
