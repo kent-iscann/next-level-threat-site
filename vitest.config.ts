@@ -1,16 +1,33 @@
 import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
 
-// Separate from vite.config.ts so the React plugin does not load for node tests.
 export default defineConfig({
   test: {
-    environment: 'node',
-    include: ['tests/**/*.test.ts'],
     restoreMocks: true,
     unstubEnvs: true,
     unstubGlobals: true,
     coverage: {
       provider: 'v8',
-      include: ['api/**/*.ts'],
+      include: ['api/**/*.ts', 'src/auth/**/*.tsx', 'src/config.ts'],
     },
+    projects: [
+      {
+        // Server code and pure modules — no DOM, no React plugin.
+        test: {
+          name: 'server',
+          environment: 'node',
+          include: ['tests/api/**/*.test.ts', 'tests/lib/**/*.test.ts'],
+        },
+      },
+      {
+        plugins: [react()],
+        test: {
+          name: 'ui',
+          environment: 'jsdom',
+          include: ['tests/ui/**/*.test.tsx'],
+          setupFiles: ['tests/ui/setup.ts'],
+        },
+      },
+    ],
   },
 });

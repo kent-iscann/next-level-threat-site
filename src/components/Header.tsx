@@ -1,18 +1,21 @@
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { UserCircle } from 'lucide-react';
+import { useAuth } from '../auth/AuthProvider';
 import './Header.css';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { pathname } = useLocation();
+  const { user, signOut } = useAuth();
   const cleanPath = pathname.replace(/\/+$/, '');
   const isDemoPage =
     // cleanPath.startsWith('/dashboard') ||
     // cleanPath.startsWith('/signal-fracture') ||
     // cleanPath.startsWith('/nexus') ||
-    cleanPath.startsWith('/archive');
+    cleanPath.startsWith('/archive') ||
+    cleanPath.startsWith('/pro');
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -31,7 +34,16 @@ export default function Header() {
           </div>
           <div className="header__demo-right">
             <UserCircle className="header__avatar-icon" />
-            <span className="header__greeting">Welcome, Subscriber</span>
+            {user ? (
+              <>
+                <span className="header__greeting">{user.email}</span>
+                <button type="button" className="header__signout" onClick={() => void signOut()}>
+                  Sign out
+                </button>
+              </>
+            ) : (
+              <Link to="/login" className="header__greeting">Sign in</Link>
+            )}
           </div>
         </div>
       </header>
