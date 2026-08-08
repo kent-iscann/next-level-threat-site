@@ -43,3 +43,28 @@ export const WATCH_REPORTS_MANIFEST_URL = contentUrl(`${WATCH_REPORTS_PREFIX}/ma
 
 /** Server-side proxy used when the direct bucket fetch fails (CORS, outage). */
 export const MANIFEST_FALLBACK_URL = '/api/manifest';
+
+// ── Auth ────────────────────────────────────────────────────────────────────
+
+/** Supabase permits 6–10; hosted projects default to 8. Must match
+ *  Authentication → Email settings, or codes get truncated on entry. */
+const DEFAULT_CODE_LENGTH = 8;
+const MIN_CODE_LENGTH = 6;
+const MAX_CODE_LENGTH = 10;
+
+function parseCodeLength(raw: string | undefined): number {
+  const parsed = Number.parseInt(raw ?? '', 10);
+  if (!Number.isInteger(parsed)) return DEFAULT_CODE_LENGTH;
+  return Math.min(MAX_CODE_LENGTH, Math.max(MIN_CODE_LENGTH, parsed));
+}
+
+export const AUTH_CODE_LENGTH: number = parseCodeLength(
+  import.meta.env.VITE_AUTH_CODE_LENGTH
+);
+
+/** Supabase rate-limits OTP requests to one per 60s per address. Overridable
+ *  only so tests can shorten it; there is no reason to change it in production. */
+export const RESEND_COOLDOWN_SECONDS: number = (() => {
+  const parsed = Number.parseInt(import.meta.env.VITE_AUTH_RESEND_COOLDOWN ?? '', 10);
+  return Number.isInteger(parsed) && parsed >= 0 ? parsed : 60;
+})();

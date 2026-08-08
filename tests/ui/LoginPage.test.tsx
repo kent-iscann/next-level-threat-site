@@ -16,6 +16,10 @@ vi.mock('../../src/lib/supabase', () => ({
 
 const { AuthProvider } = await import('../../src/auth/AuthProvider.tsx');
 const { default: LoginPage } = await import('../../src/pages/LoginPage.tsx');
+const { AUTH_CODE_LENGTH, RESEND_COOLDOWN_SECONDS } = await import('../../src/config.ts');
+
+/** A valid code of whatever length the project is configured for. */
+const FULL_CODE = '1234567890'.slice(0, AUTH_CODE_LENGTH);
 
 function renderLogin() {
   return render(
@@ -111,14 +115,38 @@ describe('<LoginPage> — entering the code', () => {
     fake.current!.settle(null);
     await requestCode(user);
 
-    await user.type(await screen.findByLabelText(/sign-in code/i), '123456');
+    await user.type(await screen.findByLabelText(/sign-in code/i), FULL_CODE);
     await user.click(screen.getByRole('button', { name: /^sign in$/i }));
 
     expect(fake.current!.auth.verifyOtp).toHaveBeenCalledWith({
       email: 'kent@example.com',
-      token: '123456',
+      token: FULL_CODE,
       type: 'email',
     });
+  });
+
+  it('accepts a full-length code without truncating it', async () => {
+    // Regression: the input was hardcoded to 6 while Supabase issued 8, so the
+    // last digits were silently dropped and no code could ever verify.
+    const user = userEvent.setup();
+    renderLogin();
+    fake.current!.settle(null);
+    await requestCode(user);
+
+    await user.type(await screen.findByLabelText(/sign-in code/i), FULL_CODE);
+    expect(screen.getByLabelText(/sign-in code/i)).toHaveValue(FULL_CODE);
+  });
+
+  it('matches the configured Supabase OTP length', async () => {
+    const user = userEvent.setup();
+    renderLogin();
+    fake.current!.settle(null);
+    await requestCode(user);
+
+    const input = await screen.findByLabelText(/sign-in code/i);
+    expect(input).toHaveAttribute('maxLength', String(AUTH_CODE_LENGTH));
+    expect(AUTH_CODE_LENGTH).toBeGreaterThanOrEqual(6);
+    expect(AUTH_CODE_LENGTH).toBeLessThanOrEqual(10);
   });
 
   it('strips non-digits as the user types', async () => {
@@ -127,19 +155,10 @@ describe('<LoginPage> — entering the code', () => {
     fake.current!.settle(null);
     await requestCode(user);
 
-    // Pasting "123-456" from an email client should not break verification.
-    await user.type(await screen.findByLabelText(/sign-in code/i), '12a3-45b6');
-    expect(screen.getByLabelText(/sign-in code/i)).toHaveValue('123456');
-  });
-
-  it('caps the code at six digits', async () => {
-    const user = userEvent.setup();
-    renderLogin();
-    fake.current!.settle(null);
-    await requestCode(user);
-
-    const input = await screen.findByLabelText(/sign-in code/i);
-    expect(input).toHaveAttribute('maxLength', '6');
+    // Pasting a hyphenated code from an email client must not break verification.
+    const messy = FULL_CODE.slice(0, 2) + 'a-' + FULL_CODE.slice(2);
+    await user.type(await screen.findByLabelText(/sign-in code/i), messy);
+    expect(screen.getByLabelText(/sign-in code/i)).toHaveValue(FULL_CODE);
   });
 
   it('shows a generic message for a bad code, revealing nothing about the account', async () => {
@@ -160,19 +179,22 @@ describe('<LoginPage> — entering the code', () => {
     expect(alert).not.toHaveTextContent(/no account|not found|unregistered/i);
   });
 
-  it('resends a code and clears the previous entry', async () => {
+  it('disables resend during the cooldown and counts down', async () => {
+    // Supabase rejects a second code for the same address within 60s, so the
+    // button must not be clickable until then.
     const user = userEvent.setup();
     renderLogin();
     fake.current!.settle(null);
     await requestCode(user);
 
-    await user.type(await screen.findByLabelText(/sign-in code/i), '111111');
-    await user.click(screen.getByRole('button', { name: /send a new code/i }));
-
-    expect(fake.current!.auth.signInWithOtp).toHaveBeenCalledTimes(2);
-    expect(screen.getByLabelText(/sign-in code/i)).toHaveValue('');
-    expect(await screen.findByRole('status')).toHaveTextContent(/new code/i);
+    const resend = await screen.findByRole('button', { name: /send a new code/i });
+    expect(resend).toBeDisabled();
+    expect(resend).toHaveTextContent(`${RESEND_COOLDOWN_SECONDS}s`);
+    expect(fake.current!.auth.signInWithOtp).toHaveBeenCalledTimes(1);
   });
+
+  // The re-enable path lives in LoginPage.cooldown.test.tsx, which runs with a
+  // shortened cooldown. Fake timers were tried here and leaked into later tests.
 
   it('lets the user go back and correct the address', async () => {
     const user = userEvent.setup();

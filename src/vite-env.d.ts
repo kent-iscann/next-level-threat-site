@@ -6,6 +6,11 @@ interface ImportMetaEnv {
   readonly VITE_SUPABASE_URL?: string;
   readonly VITE_SUPABASE_ANON_KEY?: string;
   readonly VITE_STRIPE_PUBLISHABLE_KEY?: string;
+  /** Digits in the emailed sign-in code. Must match Supabase →
+   *  Authentication → Email settings. 6–10, defaults to 8. */
+  readonly VITE_AUTH_CODE_LENGTH?: string;
+  /** Resend cooldown in seconds. Test-only override; defaults to 60. */
+  readonly VITE_AUTH_RESEND_COOLDOWN?: string;
 }
 
 interface ImportMeta {

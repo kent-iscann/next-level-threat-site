@@ -1,11 +1,10 @@
-import { useState, type FormEvent } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../auth/AuthProvider';
+import { AUTH_CODE_LENGTH, RESEND_COOLDOWN_SECONDS } from '../config';
 import './LoginPage.css';
 
 type Stage = 'enter-email' | 'enter-code';
-
-const CODE_LENGTH = 6;
 
 export default function LoginPage() {
   const { session, loading, sendLoginCode, verifyLoginCode } = useAuth();
@@ -14,8 +13,17 @@ export default function LoginPage() {
   const [code, setCode] = useState('');
   const [stage, setStage] = useState<Stage>('enter-email');
   const [busy, setBusy] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
   const [notice, setNotice] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // Supabase refuses a second code for the same address within 60s, so the
+  // resend button counts down rather than letting the user trigger an error.
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const timer = setTimeout(() => setCooldown(cooldown - 1), 1000);
+    return () => clearTimeout(timer);
+  }, [cooldown]);
 
   const from = (location.state as { from?: Location } | null)?.from?.pathname ?? '/pro';
 
@@ -29,18 +37,15 @@ export default function LoginPage() {
 
   if (session) return <Navigate to={from} replace />;
 
-  const sendCode = async (address: string) => {
-    await sendLoginCode(address);
-    setStage('enter-code');
-  };
-
   const handleSendCode = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setBusy(true);
     setError(null);
     setNotice(null);
     try {
-      await sendCode(email.trim());
+      await sendLoginCode(email.trim());
+      setStage('enter-code');
+      setCooldown(RESEND_COOLDOWN_SECONDS);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Could not send the sign-in code.');
     } finally {
@@ -55,6 +60,7 @@ export default function LoginPage() {
     try {
       await sendLoginCode(email.trim());
       setCode('');
+      setCooldown(RESEND_COOLDOWN_SECONDS);
       setNotice('A new code is on its way.');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Could not resend the code.');
@@ -73,7 +79,7 @@ export default function LoginPage() {
       // On success the session updates and the <Navigate> above takes over.
     } catch {
       // Deliberately generic: a precise message would confirm whether an address
-      // has an account, and a 6-digit code is short enough to be worth guessing.
+      // has an account, and the code is short enough to be worth guessing at.
       setError('That code is not valid or has expired. Request a new one.');
     } finally {
       setBusy(false);
@@ -88,8 +94,8 @@ export default function LoginPage() {
         {stage === 'enter-email' ? (
           <>
             <p className="login-card__desc">
-              Enter your email and we'll send you a {CODE_LENGTH}-digit sign-in code.
-              No password needed.
+              Enter your email and we'll send you a {AUTH_CODE_LENGTH}-digit sign-in
+              code. No password needed.
             </p>
             <form className="login-form" onSubmit={handleSendCode}>
               <label className="login-form__label" htmlFor="login-email">
@@ -114,8 +120,8 @@ export default function LoginPage() {
         ) : (
           <>
             <p className="login-card__desc">
-              We sent a {CODE_LENGTH}-digit code to <strong>{email}</strong>. It expires
-              shortly, so enter it soon.
+              We sent a {AUTH_CODE_LENGTH}-digit code to <strong>{email}</strong>. It
+              expires shortly, so enter it soon.
             </p>
             <form className="login-form" onSubmit={handleVerify}>
               <label className="login-form__label" htmlFor="login-code">
@@ -129,9 +135,9 @@ export default function LoginPage() {
                 autoComplete="one-time-code"
                 autoFocus
                 pattern="[0-9]*"
-                maxLength={CODE_LENGTH}
+                maxLength={AUTH_CODE_LENGTH}
                 className="login-form__input login-form__input--code"
-                placeholder="123456"
+                placeholder={'0'.repeat(AUTH_CODE_LENGTH)}
                 value={code}
                 onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))}
               />
@@ -140,8 +146,13 @@ export default function LoginPage() {
               </button>
             </form>
 
-            <button type="button" className="login-card__link" onClick={handleResend} disabled={busy}>
-              Send a new code
+            <button
+              type="button"
+              className="login-card__link"
+              onClick={handleResend}
+              disabled={busy || cooldown > 0}
+            >
+              {cooldown > 0 ? `Send a new code (${cooldown}s)` : 'Send a new code'}
             </button>
             <button
               type="button"

@@ -53,12 +53,26 @@ If only one contains `{{ .Token }}`, that half of your users gets an unusable
 email. Since new PRO subscribers are by definition new addresses, **Confirm
 signup is the one that matters most at launch.**
 
-**2. Custom SMTP** — already pointed at Brevo. The built-in sender is rate
+**2. Code length must match `VITE_AUTH_CODE_LENGTH`.** Supabase's email OTP
+length is configurable from 6 to 10 digits at Authentication → Email settings
+(`GOTRUE_MAILER_OTP_LENGTH`); hosted projects default to **8**, not 6.
+
+If the app's value is shorter than Supabase's, the input silently truncates what
+the user types and **no code can ever verify** — with no error explaining why.
+`VITE_AUTH_CODE_LENGTH` defaults to 8 and clamps to 6–10.
+
+**3. Custom SMTP** — already pointed at Brevo. The built-in sender is rate
 limited to a handful of emails per hour; since the code *is* the login, that
 would be a hard outage rather than a degradation.
 
-**3. Redirect URLs** — no longer needed. Nothing in this flow uses a callback
+**4. Redirect URLs** — no longer needed. Nothing in this flow uses a callback
 URL, and `detectSessionInUrl` is off.
+
+## Resend rate limit
+
+Supabase allows one OTP request per address per **60 seconds**. The "Send a new
+code" button therefore counts down and stays disabled until the window passes,
+rather than letting the user trigger a rejection. Codes expire after 1 hour.
 
 ## Required Vercel configuration
 
