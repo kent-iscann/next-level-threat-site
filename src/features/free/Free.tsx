@@ -96,7 +96,7 @@ export default function Free() {
           <div className="card free-card">
             <div className="free-card__badge">Emerging Threats</div>
             <h3 className="free-card__title">Watch Reports</h3>
-            <p className="free-card__desc"> Free, time-stamped intelligence that makes specific, probability-weighted calls about potential geopolitical fracture events. Subscribe to get full access to the archive.</p>
+            <p className="free-card__desc"> Free, time-stamped intelligence that makes specific, probability-weighted calls about potential geopolitical fracture events. Subscribe to get new reports as they publish.</p>
             <div className="free-card__report-grid">
               {watchReports.map(w => (
                 <div key={w.id} className="free-card__report">

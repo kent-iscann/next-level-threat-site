@@ -123,8 +123,8 @@ export default function NLTPlus() {
     <section id="plus" className="plus section">
       <div className="container">
         <div className="plus__header">
-          <h2 className="section-title">S&F Pro (Coming Soon)</h2>
-          <p className="section-subtitle">Our proprietary geopolitical early-warning intelligence framework and decision support system.</p>
+          <h2 className="section-title">S&F Pro</h2>
+          <p className="section-subtitle">Our proprietary geopolitical early-warning intelligence framework and decision-support system.</p>
         </div>
 
         <div className="plus__teasers">
@@ -132,17 +132,37 @@ export default function NLTPlus() {
             <div className="tease-card__badge">Risk Assessment</div>
             <h3 className="tease-card__title">Proactive Risk Management</h3>
             <p className="tease-card__desc">Rather than reacting to risk after the decision window has closed, Signal & Fracture identifies the convergence of weak signals across multiple domains and translates them into probability-weighted scenarios, timing assessments, and practical decision guidance.</p>
-            {/* <div className="tease-card__player">
-              <div className="placeholder-embed">Spotify Embed (Coming Soon)</div>
-            </div> */}
+            <div className="free-card__report-grid" style={{marginBottom: '0'}}>
+              <div className="free-card__report">
+                <div className="free-card__report-inner">
+                  <div className="free-card__report-main">
+                    <div className="free-card__report-title">Sample Title</div>
+                    <div className="free-card__report-desc">Sample description for the report.</div>
+                  </div>
+                </div>
+                <div className="free-card__report-actions">
+                  <a href="" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">View Sample Risk Assessment</a>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="card tease-card tease-card--signal">
             <div className="tease-card__badge">Scenario Planning</div>
             <h3 className="tease-card__title">Actionable Insights</h3>
             <p className="tease-card__desc">We deliver actionable intelligence on where fractures are emerging, how quickly they may move, and what those developments could mean for assets, operations, supply chains, counterparties, and strategic planning.</p>
-            {/* <div className="tease-card__player">
-              <div className="placeholder-embed">PDF Report (Coming Soon)</div>
-            </div> */}
+            <div className="free-card__report-grid" style={{marginBottom: '0'}}>
+              <div className="free-card__report">
+                <div className="free-card__report-inner">
+                  <div className="free-card__report-main">
+                    <div className="free-card__report-title">Sample Title</div>
+                    <div className="free-card__report-desc">Sample description for the report.</div>
+                  </div>
+                </div>
+                <div className="free-card__report-actions">
+                  <a href="" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">View Sample Report</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -174,7 +194,7 @@ export default function NLTPlus() {
 
         <div id="audience" className="audience sub-section">
           <div className="container">
-            <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>For a Organisations Operating in Geopolitical Hotspots</h3>
+            <h3 className="section-subheader" style={{textAlign: 'center', marginBottom: '3rem'}}>For Organizations Operating in Geopolitical Hotspots</h3>
             <div className="audience__grid">
               {audiences.map(a => (
                 <div key={a.title} className="audience__card">
